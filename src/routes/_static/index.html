@@ -91,6 +91,13 @@
 <script>
 (function(){
   var el=document.getElementById('mki-intro');if(!el)return;
+  // Only play on first visit of the session OR on a hard refresh of the home page.
+  // Navigations from other pages (e.g. clicking a nav link back home) won't replay.
+  var nav=(performance.getEntriesByType&&performance.getEntriesByType('navigation')[0])||{type:performance.navigation&&performance.navigation.type};
+  var isReload=nav.type==='reload'||nav.type===1;
+  var played=sessionStorage.getItem('mkiIntroPlayed');
+  if(played&&!isReload){el.remove();return}
+  try{sessionStorage.setItem('mkiIntroPlayed','1')}catch(e){}
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce){el.classList.add('open');setTimeout(function(){el.remove()},500);return}
   setTimeout(function(){el.classList.add('unlatch')},1750);

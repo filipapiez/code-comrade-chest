@@ -48,7 +48,7 @@
 
   .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
   section{position:relative}
-  .band{padding-block:clamp(72px,10vw,128px)}
+  .band{padding-block:clamp(48px,6vw,80px)}
 
   /* ---------- buttons ---------- */
   .btn{
@@ -162,7 +162,7 @@
   .fc-2 .num{color:var(--glass-deep)}
 
   /* ---------- section heading ---------- */
-  .sec-head{max-width:640px;margin-bottom:clamp(40px,5vw,60px)}
+  .sec-head{max-width:640px;margin-bottom:clamp(24px,3vw,40px)}
   .sec-head h2{font-size:clamp(2rem,4.6vw,3.3rem);margin:.9rem 0 1rem;font-weight:500}
   .sec-head p{color:var(--steel);font-size:1.05rem}
   .sec-head.center{margin-inline:auto;text-align:center}
