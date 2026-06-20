@@ -140,15 +140,19 @@
   /* glass pane signature */
   .glass-stage{position:relative;aspect-ratio:4/4.4;max-width:520px;margin-inline:auto;width:100%}
   .glass-stage .scene{position:absolute;inset:0;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-lg)}
+  .glass-stage::after{content:"";position:absolute;inset:0;border-radius:var(--r-xl);pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.18) 0%,transparent 38%,transparent 62%,rgba(244,246,247,.55) 100%);z-index:2}
   .glass-stage .float-card{
-    position:absolute;background:rgba(255,255,255,.62);backdrop-filter:blur(16px) saturate(160%);
-    -webkit-backdrop-filter:blur(16px) saturate(160%);border:1px solid rgba(255,255,255,.8);
-    border-radius:16px;padding:.85rem 1.05rem;box-shadow:var(--shadow-md);
+    position:absolute;background:rgba(255,255,255,.78);backdrop-filter:blur(18px) saturate(160%);
+    -webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(255,255,255,.85);
+    border-radius:18px;padding:.9rem 1.1rem;box-shadow:0 14px 40px rgba(14,17,19,.18);z-index:3;
   }
-  .float-card .num{font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1}
-  .float-card .lbl{font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:var(--steel);font-weight:600;margin-top:.25rem}
-  .fc-1{bottom:22px;left:-14px}
-  .fc-2{top:24px;right:-10px}
+  .float-card .num{font-family:var(--display);font-weight:700;font-size:1.65rem;line-height:1}
+  .float-card .lbl{font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;color:var(--steel);font-weight:700;margin-top:.3rem}
+  .fc-1{bottom:22px;left:-14px;background:var(--ink);border:1px solid rgba(255,255,255,.08);transform:rotate(-2.2deg);box-shadow:0 18px 44px rgba(14,17,19,.32)}
+  .fc-1 .num{color:#fff}
+  .fc-1 .lbl{color:var(--glass-deep);letter-spacing:.22em}
+  .fc-2{top:24px;right:-10px;transform:rotate(2.5deg)}
+  .fc-2 .num{color:var(--glass-deep)}
 
   /* ---------- section heading ---------- */
   .sec-head{max-width:640px;margin-bottom:clamp(40px,5vw,60px)}
