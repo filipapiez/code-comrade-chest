@@ -496,6 +496,18 @@
   .related{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.4rem}
   .related a{padding:.62rem 1.15rem;border:1px solid var(--fog);border-radius:100px;background:var(--paper);font-weight:600;font-size:.9rem;color:var(--ink);transition:.3s var(--ease)}
   .related a:hover{border-color:var(--glass);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+  .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem;margin-top:.4rem}
+  .related-card{position:relative;display:block;border-radius:20px;overflow:hidden;background:var(--paper);border:1px solid var(--fog);text-decoration:none;color:var(--ink);transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease)}
+  .related-card .rc-img{display:block;height:170px;background-image:var(--card-img);background-size:cover;background-position:center;transition:transform .7s var(--ease);transform:scale(1.04);position:relative}
+  .related-card .rc-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,17,19,0) 55%,rgba(14,17,19,.35) 100%)}
+  .related-card .rc-body{display:flex;justify-content:space-between;align-items:center;gap:.8rem;padding:1rem 1.15rem 1.05rem}
+  .related-card .rc-text{display:flex;flex-direction:column;gap:.15rem;min-width:0}
+  .related-card .rc-title{font-weight:700;font-size:1rem;letter-spacing:-.01em;line-height:1.2}
+  .related-card .rc-sub{font-size:.82rem;color:var(--smoke);font-weight:500}
+  .related-card .rc-arrow{flex-shrink:0;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--mist);color:var(--ink);font-size:1.05rem;font-weight:500;transition:background .3s var(--ease),color .3s var(--ease),transform .3s var(--ease)}
+  .related-card:hover{transform:translateY(-5px);box-shadow:0 22px 48px rgba(14,17,19,.14);border-color:var(--glass)}
+  .related-card:hover .rc-img{transform:scale(1.12)}
+  .related-card:hover .rc-arrow{background:var(--accent);color:#fff;transform:translateX(4px)}
   #features{background:var(--paper)}
   .svc-detail{background:var(--mist)}
   .cities{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;max-width:920px;margin:0 auto}
