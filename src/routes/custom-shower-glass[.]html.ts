@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import html from "./_static/index.html?raw";
+import html from "./_static/custom-shower-glass.html?raw";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/custom-shower-glass.html")({
   server: {
     handlers: {
       GET: () =>

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import html from "./_static/index.html?raw";
+import html from "./_static/tub-doors.html?raw";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/tub-doors.html")({
   server: {
     handlers: {
       GET: () =>
