@@ -512,3 +512,9 @@
 .trust-label{margin-top:.5rem;font-size:.82rem;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:.08em}
 .trust-sub{margin-top:.35rem;font-size:.8rem;color:#5a6166;line-height:1.45}
 @media (max-width:780px){.trust-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* hero call button — teal icon bubble */
+.btn-call{padding-left:.55rem;gap:.7rem}
+.btn-call .call-ico{width:34px;height:34px;border-radius:50%;background:rgba(87,196,208,.15);display:inline-grid;place-items:center;color:var(--glass-deep)}
+.btn-call .call-ico svg{width:16px;height:16px}
+.btn-call:hover .call-ico{background:rgba(255,255,255,.18);color:#fff}
