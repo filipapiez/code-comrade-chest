@@ -13,6 +13,7 @@ import { Route as TubDoorsDothtmlRouteImport } from './routes/tub-doors[.]html'
 import { Route as ShowerEnclosuresDothtmlRouteImport } from './routes/shower-enclosures[.]html'
 import { Route as ShowerDoorsDothtmlRouteImport } from './routes/shower-doors[.]html'
 import { Route as ReplacementGlassDothtmlRouteImport } from './routes/replacement-glass[.]html'
+import { Route as IndexDothtmlRouteImport } from './routes/index[.]html'
 import { Route as CustomShowerGlassDothtmlRouteImport } from './routes/custom-shower-glass[.]html'
 import { Route as BathroomRemodelGlassDothtmlRouteImport } from './routes/bathroom-remodel-glass[.]html'
 import { Route as IndexRouteImport } from './routes/index'
@@ -37,6 +38,11 @@ const ReplacementGlassDothtmlRoute = ReplacementGlassDothtmlRouteImport.update({
   path: '/replacement-glass.html',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IndexDothtmlRoute = IndexDothtmlRouteImport.update({
+  id: '/index.html',
+  path: '/index.html',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CustomShowerGlassDothtmlRoute =
   CustomShowerGlassDothtmlRouteImport.update({
     id: '/custom-shower-glass.html',
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/bathroom-remodel-glass.html': typeof BathroomRemodelGlassDothtmlRoute
   '/custom-shower-glass.html': typeof CustomShowerGlassDothtmlRoute
+  '/index.html': typeof IndexDothtmlRoute
   '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
   '/shower-doors.html': typeof ShowerDoorsDothtmlRoute
   '/shower-enclosures.html': typeof ShowerEnclosuresDothtmlRoute
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/bathroom-remodel-glass.html': typeof BathroomRemodelGlassDothtmlRoute
   '/custom-shower-glass.html': typeof CustomShowerGlassDothtmlRoute
+  '/index.html': typeof IndexDothtmlRoute
   '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
   '/shower-doors.html': typeof ShowerDoorsDothtmlRoute
   '/shower-enclosures.html': typeof ShowerEnclosuresDothtmlRoute
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/bathroom-remodel-glass.html': typeof BathroomRemodelGlassDothtmlRoute
   '/custom-shower-glass.html': typeof CustomShowerGlassDothtmlRoute
+  '/index.html': typeof IndexDothtmlRoute
   '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
   '/shower-doors.html': typeof ShowerDoorsDothtmlRoute
   '/shower-enclosures.html': typeof ShowerEnclosuresDothtmlRoute
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/'
     | '/bathroom-remodel-glass.html'
     | '/custom-shower-glass.html'
+    | '/index.html'
     | '/replacement-glass.html'
     | '/shower-doors.html'
     | '/shower-enclosures.html'
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/'
     | '/bathroom-remodel-glass.html'
     | '/custom-shower-glass.html'
+    | '/index.html'
     | '/replacement-glass.html'
     | '/shower-doors.html'
     | '/shower-enclosures.html'
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/'
     | '/bathroom-remodel-glass.html'
     | '/custom-shower-glass.html'
+    | '/index.html'
     | '/replacement-glass.html'
     | '/shower-doors.html'
     | '/shower-enclosures.html'
@@ -117,6 +129,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BathroomRemodelGlassDothtmlRoute: typeof BathroomRemodelGlassDothtmlRoute
   CustomShowerGlassDothtmlRoute: typeof CustomShowerGlassDothtmlRoute
+  IndexDothtmlRoute: typeof IndexDothtmlRoute
   ReplacementGlassDothtmlRoute: typeof ReplacementGlassDothtmlRoute
   ShowerDoorsDothtmlRoute: typeof ShowerDoorsDothtmlRoute
   ShowerEnclosuresDothtmlRoute: typeof ShowerEnclosuresDothtmlRoute
@@ -153,6 +166,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReplacementGlassDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/index.html': {
+      id: '/index.html'
+      path: '/index.html'
+      fullPath: '/index.html'
+      preLoaderRoute: typeof IndexDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/custom-shower-glass.html': {
       id: '/custom-shower-glass.html'
       path: '/custom-shower-glass.html'
@@ -181,6 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BathroomRemodelGlassDothtmlRoute: BathroomRemodelGlassDothtmlRoute,
   CustomShowerGlassDothtmlRoute: CustomShowerGlassDothtmlRoute,
+  IndexDothtmlRoute: IndexDothtmlRoute,
   ReplacementGlassDothtmlRoute: ReplacementGlassDothtmlRoute,
   ShowerDoorsDothtmlRoute: ShowerDoorsDothtmlRoute,
   ShowerEnclosuresDothtmlRoute: ShowerEnclosuresDothtmlRoute,
