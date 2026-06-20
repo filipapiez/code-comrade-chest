@@ -34,12 +34,20 @@
   <div class="wrap">
     <a href="#top" class="brand" aria-label="Makibaki home"><svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="3" y="3" width="34" height="34" rx="9" fill="#0E1113"/><rect x="9" y="9" width="9.5" height="22" rx="2.5" fill="#57C4D0" opacity="0.9"/><rect x="21.5" y="9" width="9.5" height="22" rx="2.5" fill="#fff" opacity="0.85"/><rect x="9" y="9" width="22" height="22" rx="2.5" stroke="#fff" stroke-opacity="0.4"/></svg> Makibaki</a>
     <div class="nav-links">
-      <a href="shower-doors.html">Shower Doors</a>
-      <a href="tub-doors.html">Tub Doors</a>
-      <a href="shower-enclosures.html">Shower Enclosures</a>
-      <a href="custom-shower-glass.html">Custom Glass</a>
-      <a href="bathroom-remodel-glass.html">Remodel</a>
-      <a href="replacement-glass.html">Replacement</a>
+      <div class="nav-dropdown" style="position:relative;display:inline-block;">
+        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" style="background:none;border:0;font:inherit;color:inherit;cursor:pointer;padding:0;display:inline-flex;align-items:center;gap:4px;">
+          Services:
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" style="position:absolute;top:100%;left:0;display:none;background:#fff;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.12);border-radius:8px;padding:8px 0;z-index:100;">
+          <a href="shower-doors.html" style="display:block;padding:8px 16px;">Shower Doors</a>
+          <a href="tub-doors.html" style="display:block;padding:8px 16px;">Tub Doors</a>
+          <a href="shower-enclosures.html" style="display:block;padding:8px 16px;">Shower Enclosures</a>
+          <a href="custom-shower-glass.html" style="display:block;padding:8px 16px;">Custom Glass</a>
+          <a href="bathroom-remodel-glass.html" style="display:block;padding:8px 16px;">Bathroom Remodel</a>
+          <a href="replacement-glass.html" style="display:block;padding:8px 16px;">Replacement Glass</a>
+        </div>
+      </div>
       <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </div>
@@ -50,21 +58,32 @@
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span></button>
   </div>
 </nav>
+<style>
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu { display:block !important; }
+  .nav-dropdown-menu a:hover { background:#f4f6f8; }
+  .mm-services-label { display:block; padding:8px 0; font-weight:600; opacity:0.7; text-transform:uppercase; font-size:12px; letter-spacing:0.5px; }
+  .mm-services-group a { padding-left:16px !important; }
+</style>
 
 <div class="mobile-menu" id="mobileMenu">
-      <a href="shower-doors.html">Shower Doors</a>
-      <a href="tub-doors.html">Tub Doors</a>
-      <a href="shower-enclosures.html">Shower Enclosures</a>
-      <a href="custom-shower-glass.html">Custom Glass</a>
-      <a href="bathroom-remodel-glass.html">Bathroom Remodel</a>
-      <a href="replacement-glass.html">Replacement Glass</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
+  <span class="mm-services-label">Services:</span>
+  <div class="mm-services-group">
+    <a href="shower-doors.html">Shower Doors</a>
+    <a href="tub-doors.html">Tub Doors</a>
+    <a href="shower-enclosures.html">Shower Enclosures</a>
+    <a href="custom-shower-glass.html">Custom Glass</a>
+    <a href="bathroom-remodel-glass.html">Bathroom Remodel</a>
+    <a href="replacement-glass.html">Replacement Glass</a>
+  </div>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
   <div class="mm-foot">
     <a href="#contact" class="btn btn-primary">Get Free Estimate</a>
     <a href="tel:+12244279199" class="btn btn-outline">Call 224-427-9199</a>
   </div>
 </div>
+
 
 <span id="top"></span>
 <!-- ============ HERO ============ -->
