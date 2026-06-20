@@ -48,7 +48,7 @@
 
   .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
   section{position:relative}
-  .band{padding-block:clamp(72px,10vw,128px)}
+  .band{padding-block:clamp(48px,6vw,80px)}
 
   /* ---------- buttons ---------- */
   .btn{
