@@ -9,27 +9,183 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TubDoorsDothtmlRouteImport } from './routes/tub-doors[.]html'
+import { Route as ShowerEnclosuresDothtmlRouteImport } from './routes/shower-enclosures[.]html'
+import { Route as ShowerDoorsDothtmlRouteImport } from './routes/shower-doors[.]html'
+import { Route as ReplacementGlassDothtmlRouteImport } from './routes/replacement-glass[.]html'
+import { Route as CustomShowerGlassDothtmlRouteImport } from './routes/custom-shower-glass[.]html'
+import { Route as BathroomRemodelGlassDothtmlRouteImport } from './routes/bathroom-remodel-glass[.]html'
+import { Route as IndexRouteImport } from './routes/index'
 
-export interface FileRoutesByFullPath {}
-export interface FileRoutesByTo {}
+const TubDoorsDothtmlRoute = TubDoorsDothtmlRouteImport.update({
+  id: '/tub-doors.html',
+  path: '/tub-doors.html',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShowerEnclosuresDothtmlRoute = ShowerEnclosuresDothtmlRouteImport.update({
+  id: '/shower-enclosures.html',
+  path: '/shower-enclosures.html',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShowerDoorsDothtmlRoute = ShowerDoorsDothtmlRouteImport.update({
+  id: '/shower-doors.html',
+  path: '/shower-doors.html',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReplacementGlassDothtmlRoute = ReplacementGlassDothtmlRouteImport.update({
+  id: '/replacement-glass.html',
+  path: '/replacement-glass.html',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CustomShowerGlassDothtmlRoute =
+  CustomShowerGlassDothtmlRouteImport.update({
+    id: '/custom-shower-glass.html',
+    path: '/custom-shower-glass.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BathroomRemodelGlassDothtmlRoute =
+  BathroomRemodelGlassDothtmlRouteImport.update({
+    id: '/bathroom-remodel-glass.html',
+    path: '/bathroom-remodel-glass.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+export interface FileRoutesByFullPath {
+  '/': typeof IndexRoute
+  '/bathroom-remodel-glass.html': typeof BathroomRemodelGlassDothtmlRoute
+  '/custom-shower-glass.html': typeof CustomShowerGlassDothtmlRoute
+  '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
+  '/shower-doors.html': typeof ShowerDoorsDothtmlRoute
+  '/shower-enclosures.html': typeof ShowerEnclosuresDothtmlRoute
+  '/tub-doors.html': typeof TubDoorsDothtmlRoute
+}
+export interface FileRoutesByTo {
+  '/': typeof IndexRoute
+  '/bathroom-remodel-glass.html': typeof BathroomRemodelGlassDothtmlRoute
+  '/custom-shower-glass.html': typeof CustomShowerGlassDothtmlRoute
+  '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
+  '/shower-doors.html': typeof ShowerDoorsDothtmlRoute
+  '/shower-enclosures.html': typeof ShowerEnclosuresDothtmlRoute
+  '/tub-doors.html': typeof TubDoorsDothtmlRoute
+}
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
+  '/bathroom-remodel-glass.html': typeof BathroomRemodelGlassDothtmlRoute
+  '/custom-shower-glass.html': typeof CustomShowerGlassDothtmlRoute
+  '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
+  '/shower-doors.html': typeof ShowerDoorsDothtmlRoute
+  '/shower-enclosures.html': typeof ShowerEnclosuresDothtmlRoute
+  '/tub-doors.html': typeof TubDoorsDothtmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: never
+  fullPaths:
+    | '/'
+    | '/bathroom-remodel-glass.html'
+    | '/custom-shower-glass.html'
+    | '/replacement-glass.html'
+    | '/shower-doors.html'
+    | '/shower-enclosures.html'
+    | '/tub-doors.html'
   fileRoutesByTo: FileRoutesByTo
-  to: never
-  id: '__root__'
+  to:
+    | '/'
+    | '/bathroom-remodel-glass.html'
+    | '/custom-shower-glass.html'
+    | '/replacement-glass.html'
+    | '/shower-doors.html'
+    | '/shower-enclosures.html'
+    | '/tub-doors.html'
+  id:
+    | '__root__'
+    | '/'
+    | '/bathroom-remodel-glass.html'
+    | '/custom-shower-glass.html'
+    | '/replacement-glass.html'
+    | '/shower-doors.html'
+    | '/shower-enclosures.html'
+    | '/tub-doors.html'
   fileRoutesById: FileRoutesById
 }
-export interface RootRouteChildren {}
-
-declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {}
+export interface RootRouteChildren {
+  IndexRoute: typeof IndexRoute
+  BathroomRemodelGlassDothtmlRoute: typeof BathroomRemodelGlassDothtmlRoute
+  CustomShowerGlassDothtmlRoute: typeof CustomShowerGlassDothtmlRoute
+  ReplacementGlassDothtmlRoute: typeof ReplacementGlassDothtmlRoute
+  ShowerDoorsDothtmlRoute: typeof ShowerDoorsDothtmlRoute
+  ShowerEnclosuresDothtmlRoute: typeof ShowerEnclosuresDothtmlRoute
+  TubDoorsDothtmlRoute: typeof TubDoorsDothtmlRoute
 }
 
-const rootRouteChildren: RootRouteChildren = {}
+declare module '@tanstack/react-router' {
+  interface FileRoutesByPath {
+    '/tub-doors.html': {
+      id: '/tub-doors.html'
+      path: '/tub-doors.html'
+      fullPath: '/tub-doors.html'
+      preLoaderRoute: typeof TubDoorsDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shower-enclosures.html': {
+      id: '/shower-enclosures.html'
+      path: '/shower-enclosures.html'
+      fullPath: '/shower-enclosures.html'
+      preLoaderRoute: typeof ShowerEnclosuresDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shower-doors.html': {
+      id: '/shower-doors.html'
+      path: '/shower-doors.html'
+      fullPath: '/shower-doors.html'
+      preLoaderRoute: typeof ShowerDoorsDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/replacement-glass.html': {
+      id: '/replacement-glass.html'
+      path: '/replacement-glass.html'
+      fullPath: '/replacement-glass.html'
+      preLoaderRoute: typeof ReplacementGlassDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/custom-shower-glass.html': {
+      id: '/custom-shower-glass.html'
+      path: '/custom-shower-glass.html'
+      fullPath: '/custom-shower-glass.html'
+      preLoaderRoute: typeof CustomShowerGlassDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bathroom-remodel-glass.html': {
+      id: '/bathroom-remodel-glass.html'
+      path: '/bathroom-remodel-glass.html'
+      fullPath: '/bathroom-remodel-glass.html'
+      preLoaderRoute: typeof BathroomRemodelGlassDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+  }
+}
+
+const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
+  BathroomRemodelGlassDothtmlRoute: BathroomRemodelGlassDothtmlRoute,
+  CustomShowerGlassDothtmlRoute: CustomShowerGlassDothtmlRoute,
+  ReplacementGlassDothtmlRoute: ReplacementGlassDothtmlRoute,
+  ShowerDoorsDothtmlRoute: ShowerDoorsDothtmlRoute,
+  ShowerEnclosuresDothtmlRoute: ShowerEnclosuresDothtmlRoute,
+  TubDoorsDothtmlRoute: TubDoorsDothtmlRoute,
+}
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
