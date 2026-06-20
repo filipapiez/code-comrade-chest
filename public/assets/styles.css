@@ -490,3 +490,13 @@
   .cities span{padding:.5rem .95rem;border:1px solid var(--fog);border-radius:100px;background:var(--paper);font-weight:600;font-size:.85rem;color:var(--ink)}
   .foot-areas{color:#3a4146;font-size:.74rem;line-height:1.8;margin-top:14px;max-width:80ch}
   .foot-areas b{color:var(--steel-soft)}
+
+/* Trust band between gallery and related on service pages */
+.trust-band{background:var(--mist)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:1100px;margin:0 auto}
+.trust-card{background:var(--paper);border:1px solid var(--fog);border-radius:18px;padding:1.5rem 1.25rem;text-align:center;transition:transform .25s ease,box-shadow .25s ease}
+.trust-card:hover{transform:translateY(-3px);box-shadow:0 14px 40px -22px rgba(0,0,0,.25)}
+.trust-num{font-family:var(--font-display,inherit);font-size:2.1rem;font-weight:700;color:var(--accent,#0aa3a3);line-height:1;letter-spacing:-.02em}
+.trust-label{margin-top:.5rem;font-size:.82rem;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:.08em}
+.trust-sub{margin-top:.35rem;font-size:.8rem;color:#5a6166;line-height:1.45}
+@media (max-width:780px){.trust-grid{grid-template-columns:repeat(2,1fr)}}
