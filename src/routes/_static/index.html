@@ -35,36 +35,68 @@
 <style>
   #mki-intro{position:fixed;inset:0;z-index:99999;pointer-events:none;overflow:hidden}
   #mki-intro .rail{position:absolute;top:0;left:0;right:0;height:14px;z-index:6;background:linear-gradient(#2b3033,#15191b);box-shadow:0 3px 10px rgba(0,0,0,.35)}
-  #mki-intro .panel{position:absolute;top:0;bottom:0;width:51%;overflow:hidden;-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);background:linear-gradient(135deg,rgba(255,255,255,.88),rgba(226,237,238,.93));transition:transform 1.2s cubic-bezier(.76,0,.24,1),box-shadow 1.2s ease}
+  #mki-intro .seam{position:absolute;top:14px;bottom:0;left:50%;width:2px;transform:translateX(-50%);z-index:3;background:#57C4D0;box-shadow:0 0 18px #57C4D0,0 0 6px #57C4D0;opacity:.9;transition:opacity .4s ease}
+  #mki-intro.open .seam{opacity:0}
+  #mki-intro .panel{position:absolute;top:0;bottom:0;width:51%;overflow:hidden;-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);background:linear-gradient(135deg,rgba(255,255,255,.88),rgba(226,237,238,.93));transition:transform .2s ease-out}
   #mki-intro .panel.left{left:0;border-right:2px solid #57C4D0;box-shadow:8px 0 34px rgba(14,17,19,.20)}
   #mki-intro .panel.right{right:0;border-left:2px solid #57C4D0;box-shadow:-8px 0 34px rgba(14,17,19,.20)}
-  #mki-intro.open .panel.left{transform:translateX(-103%);box-shadow:none}
-  #mki-intro.open .panel.right{transform:translateX(103%);box-shadow:none}
+  #mki-intro.unlatch .panel.left{transform:translateX(7px)}
+  #mki-intro.unlatch .panel.right{transform:translateX(-7px)}
+  #mki-intro.open .panel{transition:transform 1.25s cubic-bezier(.74,0,.22,1),box-shadow 1.25s ease;box-shadow:none}
+  #mki-intro.open .panel.left{transform:translateX(-103%)}
+  #mki-intro.open .panel.right{transform:translateX(103%)}
   #mki-intro .glass::before{content:"";position:absolute;inset:0;opacity:.5;background:repeating-linear-gradient(90deg,rgba(255,255,255,.20) 0 11px,rgba(120,150,150,.07) 11px 22px)}
   #mki-intro .glass::after{content:"";position:absolute;inset:0;background:radial-gradient(130% 55% at 50% -10%,rgba(255,255,255,.55),transparent 60%)}
-  #mki-intro .shimmer{position:absolute;top:0;bottom:0;left:-60%;width:45%;z-index:2;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);filter:blur(7px);animation:mkiSweep 2.4s ease-in-out infinite}
+  #mki-intro .shimmer{position:absolute;top:0;bottom:0;left:-60%;width:45%;z-index:2;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);filter:blur(7px);animation:mkiSweep 2.6s ease-in-out infinite}
   #mki-intro .handle{position:absolute;top:50%;transform:translateY(-50%);width:11px;height:128px;border-radius:7px;z-index:5;background:linear-gradient(180deg,#f1f5f6,#aeb6b8 52%,#e2e8e9);box-shadow:0 5px 16px rgba(14,17,19,.28),inset 0 1px 0 rgba(255,255,255,.9)}
-  #mki-intro .center{position:absolute;inset:0;display:grid;place-items:center;z-index:4;transition:opacity .55s ease,transform .9s ease}
-  #mki-intro.open .center{opacity:0;transform:scale(1.06)}
+  #mki-intro .steam{position:absolute;inset:0;z-index:3;transition:opacity .5s ease}
+  #mki-intro.unlatch .steam,#mki-intro.open .steam{opacity:0}
+  #mki-intro .steam span{position:absolute;bottom:30%;border-radius:50%;background:rgba(255,255,255,.6);filter:blur(14px)}
+  #mki-intro .steam span:nth-child(1){left:44%;width:70px;height:70px;animation:mkiSteam 6.5s 0s ease-in-out infinite}
+  #mki-intro .steam span:nth-child(2){left:50%;width:90px;height:90px;animation:mkiSteam 7.5s 1.6s ease-in-out infinite}
+  #mki-intro .steam span:nth-child(3){left:56%;width:64px;height:64px;animation:mkiSteam 6s 3s ease-in-out infinite}
+  #mki-intro .drop{position:absolute;border-radius:50%;background:rgba(255,255,255,.8)}
+  #mki-intro .center{position:absolute;inset:0;display:grid;place-items:center;z-index:4;transition:opacity .5s ease,transform .9s ease}
+  #mki-intro.unlatch .center,#mki-intro.open .center{opacity:0;transform:scale(1.07)}
+  #mki-intro .logo-in{animation:mkiLogoIn 1s cubic-bezier(.22,1,.36,1) both;text-align:center}
   #mki-intro .logo{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:600;letter-spacing:-.02em;font-size:clamp(2rem,6vw,3.4rem);color:#0E1113;line-height:1;text-align:center}
   #mki-intro .rule{height:1px;width:54px;background:#57C4D0;margin:16px auto}
   #mki-intro .tag{font-family:'Manrope',system-ui,sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:#6E767C;text-align:center}
   @keyframes mkiSweep{0%{left:-60%}55%{left:130%}100%{left:130%}}
-  @media (prefers-reduced-motion: reduce){#mki-intro .shimmer{display:none}}
+  @keyframes mkiSteam{0%{transform:translateY(26px) scale(1);opacity:0}30%{opacity:.45}100%{transform:translateY(-46px) scale(1.5);opacity:0}}
+  @keyframes mkiLogoIn{0%{opacity:0;transform:translateY(16px) scale(.95);filter:blur(5px)}100%{opacity:1;transform:none;filter:none}}
+  @media (prefers-reduced-motion: reduce){#mki-intro .shimmer,#mki-intro .steam,#mki-intro .logo-in{animation:none!important}#mki-intro .steam{display:none}}
 </style>
 <div id="mki-intro" aria-hidden="true">
   <div class="rail"></div>
-  <div class="panel glass left"><span class="shimmer"></span><div class="handle" style="right:16px"></div></div>
-  <div class="panel glass right"><span class="shimmer" style="animation-delay:.2s"></span><div class="handle" style="left:16px"></div></div>
-  <div class="center"><div><div class="logo">Makibaki</div><div class="rule"></div><div class="tag">Premium Shower Glass</div></div></div>
+  <div class="steam"><span></span><span></span><span></span></div>
+  <div class="seam"></div>
+  <div class="panel glass left">
+    <span class="shimmer"></span>
+    <span class="drop" style="left:32%;top:26%;width:5px;height:5px"></span>
+    <span class="drop" style="left:62%;top:54%;width:4px;height:4px"></span>
+    <div class="handle" style="right:16px"></div>
+  </div>
+  <div class="panel glass right">
+    <span class="shimmer" style="animation-delay:.25s"></span>
+    <span class="drop" style="left:40%;top:38%;width:5px;height:5px"></span>
+    <div class="handle" style="left:16px"></div>
+  </div>
+  <div class="center"><div class="logo-in">
+    <svg width="52" height="52" viewBox="0 0 40 40" fill="none" style="margin:0 auto 14px;display:block"><rect x="3" y="3" width="34" height="34" rx="9" fill="#0E1113"/><rect x="9" y="9" width="9.5" height="22" rx="2.5" fill="#57C4D0" opacity="0.9"/><rect x="21.5" y="9" width="9.5" height="22" rx="2.5" fill="#fff" opacity="0.85"/><rect x="9" y="9" width="22" height="22" rx="2.5" stroke="#fff" stroke-opacity="0.4"/></svg>
+    <div class="logo">Makibaki</div>
+    <div class="rule"></div>
+    <div class="tag">Premium Shower Glass</div>
+  </div></div>
 </div>
 <script>
 (function(){
   var el=document.getElementById('mki-intro');if(!el)return;
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce){el.classList.add('open');setTimeout(function(){el.remove()},450);return}
-  setTimeout(function(){el.classList.add('open')},750);
-  setTimeout(function(){el.remove()},2150);
+  if(reduce){el.classList.add('open');setTimeout(function(){el.remove()},500);return}
+  setTimeout(function(){el.classList.add('unlatch')},1750);
+  setTimeout(function(){el.classList.remove('unlatch');el.classList.add('open')},1950);
+  setTimeout(function(){el.remove()},3350);
 })();
 </script>
 <nav class="nav" id="nav">
