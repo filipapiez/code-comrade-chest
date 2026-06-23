@@ -144,7 +144,12 @@ const ICN = {
   enclosure:'<rect x="3" y="4" width="8" height="16" rx="1"/><rect x="13" y="4" width="8" height="16" rx="1"/><line x1="11" y1="4" x2="11" y2="20"/>',
   custom:'<path d="M12 2 4 7v10l8 5 8-5V7z"/><path d="M12 2v20M4 7l8 5 8-5"/>',
   remodel:'<path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/>',
-  replace:'<path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/>'
+  replace:'<path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/>',
+  mirror:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7l2 4 4-2"/>',
+  rail:'<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/><line x1="6" y1="6" x2="6" y2="18"/><line x1="12" y1="6" x2="12" y2="18"/><line x1="18" y1="6" x2="18" y2="18"/>',
+  wine:'<path d="M8 3h8l-1 7a4 4 0 0 1-6 0z"/><path d="M12 13v6M9 21h6"/>',
+  office:'<rect x="3" y="3" width="8" height="18" rx="1"/><rect x="13" y="3" width="8" height="18" rx="1"/>',
+  more:'<circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/>'
 };
 const services = [
   {ic:'door', t:'Shower Doors', d:'Frameless and semi-frameless glass shower doors that open clean, seal tight, and make any bathroom feel larger.'},
@@ -152,9 +157,16 @@ const services = [
   {ic:'enclosure', t:'Shower Enclosures', d:'Full corner and three-panel enclosures engineered to your exact walls, slope, and tile.'},
   {ic:'custom', t:'Custom Shower Glass', d:'Made-to-measure glass cut, tempered, and finished to fit even the most unusual layouts.'},
   {ic:'remodel', t:'Bathroom Remodel Glass', d:'Glass that ties a full remodel together — coordinated with your tile, hardware, and lighting.'},
-  {ic:'replace', t:'Replacement Glass', d:'Fast, precise replacement of cracked or cloudy panels without redoing the whole bathroom.'}
+  {ic:'replace', t:'Replacement Glass', d:'Fast, precise replacement of cracked or cloudy panels without redoing the whole bathroom.'},
+  {ic:'mirror', t:'Mirrors & Mirror Walls', d:'Frameless vanity mirrors, LED-backlit mirrors and full-wall mirror installations — measured and hung to fit.'},
+  {ic:'rail', t:'Glass Railings', d:'Frameless and post-mounted glass stair, balcony and deck railings — ½″ tempered, code-compliant.'},
+  {ic:'wine', t:'Wine & Cigar Rooms', d:'Sealed glass enclosures for wine cellars and cigar lounges — frameless or black-framed, climate-friendly.'},
+  {ic:'office', t:'Office Partitions', d:'Frosted and clear glass partitions and sliding doors for home offices and commercial buildouts.'},
+  {ic:'more', t:'Other Custom Glass', d:'Display shelves, glass-wrapped columns, rooftop railings and the one-off pieces that don\u2019t fit a category.'}
 ];
-const SVC_LINKS={'Shower Doors':'shower-doors.html','Tub Doors':'tub-doors.html','Shower Enclosures':'shower-enclosures.html','Custom Shower Glass':'custom-shower-glass.html','Bathroom Remodel Glass':'bathroom-remodel-glass.html','Replacement Glass':'replacement-glass.html'};
+const SVC_LINKS={'Shower Doors':'shower-doors.html','Tub Doors':'tub-doors.html','Shower Enclosures':'shower-enclosures.html','Custom Shower Glass':'custom-shower-glass.html','Bathroom Remodel Glass':'bathroom-remodel-glass.html','Replacement Glass':'replacement-glass.html','Mirrors & Mirror Walls':'mirrors.html','Glass Railings':'glass-railings.html','Wine & Cigar Rooms':'wine-cigar-rooms.html','Office Partitions':'office-partitions.html','Other Custom Glass':'other-custom-glass.html'};
+// Map gallery category → service page so clicking a tile opens the right service
+const CAT_LINKS={'shower-doors':'shower-doors.html','sliding-doors':'shower-doors.html','tub-doors':'tub-doors.html','enclosures':'shower-enclosures.html','custom-glass':'custom-shower-glass.html','mirrors':'mirrors.html','railings':'glass-railings.html','wine-rooms':'wine-cigar-rooms.html','office':'office-partitions.html','other':'other-custom-glass.html'};
 const _sg=document.getElementById('servicesGrid'); if(_sg) _sg.innerHTML = services.map((s,i)=>`
   <article class="svc" data-reveal data-delay="${(i%3)+1}">
     <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICN[s.ic]}</svg></div>
@@ -163,6 +175,7 @@ const _sg=document.getElementById('servicesGrid'); if(_sg) _sg.innerHTML = servi
     <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     <a class="svc-stretch" href="${SVC_LINKS[s.t]||'#contact'}" aria-label="${s.t}"></a>
   </article>`).join('');
+
 
 // pointer-follow glow on service cards
 document.querySelectorAll('.svc').forEach(card=>{
@@ -197,45 +210,32 @@ const _wg=document.getElementById('whyGrid'); if(_wg) _wg.innerHTML = why.map((w
   const grid=document.getElementById('galleryGrid');
   if(!grid) return;
   const items=window.MAKI_GALLERY||[];
-  grid.innerHTML=items.map((p,i)=>`
-    <figure class="tile" data-cat="${p.cat||''}" data-i="${i}" data-reveal data-delay="${(i%3)+1}" role="button" tabindex="0" aria-label="View ${p.title}">
+  // On a service page (e.g. shower-enclosures.html), data-default-cat scopes the gallery to that service.
+  const defaultCat=grid.getAttribute('data-default-cat')||'all';
+  grid.innerHTML=items.map((p,i)=>{
+    const link=(window.CAT_LINKS||CAT_LINKS)[p.cat]||'#contact';
+    return `
+    <a class="tile" data-cat="${p.cat||''}" data-i="${i}" data-reveal data-delay="${(i%3)+1}" href="${link}" aria-label="See more ${p.catLabel||'projects'}: ${p.title}">
       <img class="g-img" src="${p.src}" alt="${p.alt||p.title}" loading="lazy">
-      <figcaption class="tile-overlay"><span class="cat">${p.catLabel||''}</span><h4>${p.title}</h4></figcaption>
-    </figure>`).join('');
+      <span class="tile-overlay"><span class="cat">${p.catLabel||''}</span><span class="tile-title-wrap"><h4>${p.title}</h4><span class="tile-cta">View ${p.catLabel||'service'} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></span>
+    </a>`;
+  }).join('');
 
-  let visible=items.map((_,i)=>i);
   function applyFilter(f){
-    visible=[];
     grid.querySelectorAll('.tile').forEach(t=>{
       const show=(f==='all'||t.dataset.cat===f);
       t.classList.toggle('hide',!show);
-      if(show) visible.push(+t.dataset.i);
     });
   }
+  // Auto-filter on service pages
+  if(defaultCat!=='all') applyFilter(defaultCat);
+
   document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
     document.querySelector('.filter.active')?.classList.remove('active');
     btn.classList.add('active');applyFilter(btn.dataset.filter);
   }));
-
-  const modal=document.getElementById('modal'); if(!modal) return;
-  const lbImg=document.getElementById('lbImg');
-  let cur=0;
-  function show(i){const p=items[i];if(!p)return;cur=i;lbImg.src=p.src;lbImg.alt=p.alt||p.title;
-    document.getElementById('mCat').textContent=p.catLabel||'';document.getElementById('mTitle').textContent=p.title;}
-  function open(i){show(i);modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
-  function close(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
-  function step(d){if(!visible.length)return;let pos=visible.indexOf(cur);if(pos<0)pos=0;pos=(pos+d+visible.length)%visible.length;show(visible[pos]);}
-  grid.querySelectorAll('.tile').forEach(t=>{
-    t.addEventListener('click',()=>open(+t.dataset.i));
-    t.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open(+t.dataset.i);}});
-  });
-  document.getElementById('modalClose').addEventListener('click',close);
-  document.getElementById('lbPrev').addEventListener('click',e=>{e.stopPropagation();step(-1);});
-  document.getElementById('lbNext').addEventListener('click',e=>{e.stopPropagation();step(1);});
-  modal.addEventListener('click',e=>{if(e.target===modal)close();});
-  window.addEventListener('keydown',e=>{if(!modal.classList.contains('open'))return;
-    if(e.key==='Escape')close();if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1);});
 })();
+
 
 /* ============================================================
    PROCESS
