@@ -18,7 +18,6 @@ import { Route as ShowerDoorsWheelingIlDothtmlRouteImport } from './routes/showe
 import { Route as ShowerDoorsVernonHillsIlDothtmlRouteImport } from './routes/shower-doors-vernon-hills-il[.]html'
 import { Route as ShowerDoorsStreamwoodIlDothtmlRouteImport } from './routes/shower-doors-streamwood-il[.]html'
 import { Route as ShowerDoorsSkokieIlDothtmlRouteImport } from './routes/shower-doors-skokie-il[.]html'
-import { Route as ShowerDoorsSchaumburgIlDothtmlRouteImport } from './routes/shower-doors-schaumburg-il[.]html'
 import { Route as ShowerDoorsRoselleIlDothtmlRouteImport } from './routes/shower-doors-roselle-il[.]html'
 import { Route as ShowerDoorsRollingMeadowsIlDothtmlRouteImport } from './routes/shower-doors-rolling-meadows-il[.]html'
 import { Route as ShowerDoorsRiverwoodsIlDothtmlRouteImport } from './routes/shower-doors-riverwoods-il[.]html'
@@ -38,6 +37,7 @@ import { Route as ShowerDoorsGlencoeIlDothtmlRouteImport } from './routes/shower
 import { Route as ShowerDoorsEvanstonIlDothtmlRouteImport } from './routes/shower-doors-evanston-il[.]html'
 import { Route as ShowerDoorsElkGroveVillageIlDothtmlRouteImport } from './routes/shower-doors-elk-grove-village-il[.]html'
 import { Route as ShowerDoorsDesPlainesIlDothtmlRouteImport } from './routes/shower-doors-des-plaines-il[.]html'
+import { Route as ShowerDoorsDeerfieldIlDothtmlRouteImport } from './routes/shower-doors-deerfield-il[.]html'
 import { Route as ShowerDoorsBuffaloGroveIlDothtmlRouteImport } from './routes/shower-doors-buffalo-grove-il[.]html'
 import { Route as ShowerDoorsBartlettIlDothtmlRouteImport } from './routes/shower-doors-bartlett-il[.]html'
 import { Route as ShowerDoorsBannockburnIlDothtmlRouteImport } from './routes/shower-doors-bannockburn-il[.]html'
@@ -98,12 +98,6 @@ const ShowerDoorsSkokieIlDothtmlRoute =
   ShowerDoorsSkokieIlDothtmlRouteImport.update({
     id: '/shower-doors-skokie-il.html',
     path: '/shower-doors-skokie-il.html',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ShowerDoorsSchaumburgIlDothtmlRoute =
-  ShowerDoorsSchaumburgIlDothtmlRouteImport.update({
-    id: '/shower-doors-schaumburg-il.html',
-    path: '/shower-doors-schaumburg-il.html',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ShowerDoorsRoselleIlDothtmlRoute =
@@ -220,6 +214,12 @@ const ShowerDoorsDesPlainesIlDothtmlRoute =
     path: '/shower-doors-des-plaines-il.html',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ShowerDoorsDeerfieldIlDothtmlRoute =
+  ShowerDoorsDeerfieldIlDothtmlRouteImport.update({
+    id: '/shower-doors-deerfield-il.html',
+    path: '/shower-doors-deerfield-il.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ShowerDoorsBuffaloGroveIlDothtmlRoute =
   ShowerDoorsBuffaloGroveIlDothtmlRouteImport.update({
     id: '/shower-doors-buffalo-grove-il.html',
@@ -289,6 +289,7 @@ export interface FileRoutesByFullPath {
   '/shower-doors-bannockburn-il.html': typeof ShowerDoorsBannockburnIlDothtmlRoute
   '/shower-doors-bartlett-il.html': typeof ShowerDoorsBartlettIlDothtmlRoute
   '/shower-doors-buffalo-grove-il.html': typeof ShowerDoorsBuffaloGroveIlDothtmlRoute
+  '/shower-doors-deerfield-il.html': typeof ShowerDoorsDeerfieldIlDothtmlRoute
   '/shower-doors-des-plaines-il.html': typeof ShowerDoorsDesPlainesIlDothtmlRoute
   '/shower-doors-elk-grove-village-il.html': typeof ShowerDoorsElkGroveVillageIlDothtmlRoute
   '/shower-doors-evanston-il.html': typeof ShowerDoorsEvanstonIlDothtmlRoute
@@ -308,7 +309,6 @@ export interface FileRoutesByFullPath {
   '/shower-doors-riverwoods-il.html': typeof ShowerDoorsRiverwoodsIlDothtmlRoute
   '/shower-doors-rolling-meadows-il.html': typeof ShowerDoorsRollingMeadowsIlDothtmlRoute
   '/shower-doors-roselle-il.html': typeof ShowerDoorsRoselleIlDothtmlRoute
-  '/shower-doors-schaumburg-il.html': typeof ShowerDoorsSchaumburgIlDothtmlRoute
   '/shower-doors-skokie-il.html': typeof ShowerDoorsSkokieIlDothtmlRoute
   '/shower-doors-streamwood-il.html': typeof ShowerDoorsStreamwoodIlDothtmlRoute
   '/shower-doors-vernon-hills-il.html': typeof ShowerDoorsVernonHillsIlDothtmlRoute
@@ -330,6 +330,7 @@ export interface FileRoutesByTo {
   '/shower-doors-bannockburn-il.html': typeof ShowerDoorsBannockburnIlDothtmlRoute
   '/shower-doors-bartlett-il.html': typeof ShowerDoorsBartlettIlDothtmlRoute
   '/shower-doors-buffalo-grove-il.html': typeof ShowerDoorsBuffaloGroveIlDothtmlRoute
+  '/shower-doors-deerfield-il.html': typeof ShowerDoorsDeerfieldIlDothtmlRoute
   '/shower-doors-des-plaines-il.html': typeof ShowerDoorsDesPlainesIlDothtmlRoute
   '/shower-doors-elk-grove-village-il.html': typeof ShowerDoorsElkGroveVillageIlDothtmlRoute
   '/shower-doors-evanston-il.html': typeof ShowerDoorsEvanstonIlDothtmlRoute
@@ -349,7 +350,6 @@ export interface FileRoutesByTo {
   '/shower-doors-riverwoods-il.html': typeof ShowerDoorsRiverwoodsIlDothtmlRoute
   '/shower-doors-rolling-meadows-il.html': typeof ShowerDoorsRollingMeadowsIlDothtmlRoute
   '/shower-doors-roselle-il.html': typeof ShowerDoorsRoselleIlDothtmlRoute
-  '/shower-doors-schaumburg-il.html': typeof ShowerDoorsSchaumburgIlDothtmlRoute
   '/shower-doors-skokie-il.html': typeof ShowerDoorsSkokieIlDothtmlRoute
   '/shower-doors-streamwood-il.html': typeof ShowerDoorsStreamwoodIlDothtmlRoute
   '/shower-doors-vernon-hills-il.html': typeof ShowerDoorsVernonHillsIlDothtmlRoute
@@ -372,6 +372,7 @@ export interface FileRoutesById {
   '/shower-doors-bannockburn-il.html': typeof ShowerDoorsBannockburnIlDothtmlRoute
   '/shower-doors-bartlett-il.html': typeof ShowerDoorsBartlettIlDothtmlRoute
   '/shower-doors-buffalo-grove-il.html': typeof ShowerDoorsBuffaloGroveIlDothtmlRoute
+  '/shower-doors-deerfield-il.html': typeof ShowerDoorsDeerfieldIlDothtmlRoute
   '/shower-doors-des-plaines-il.html': typeof ShowerDoorsDesPlainesIlDothtmlRoute
   '/shower-doors-elk-grove-village-il.html': typeof ShowerDoorsElkGroveVillageIlDothtmlRoute
   '/shower-doors-evanston-il.html': typeof ShowerDoorsEvanstonIlDothtmlRoute
@@ -391,7 +392,6 @@ export interface FileRoutesById {
   '/shower-doors-riverwoods-il.html': typeof ShowerDoorsRiverwoodsIlDothtmlRoute
   '/shower-doors-rolling-meadows-il.html': typeof ShowerDoorsRollingMeadowsIlDothtmlRoute
   '/shower-doors-roselle-il.html': typeof ShowerDoorsRoselleIlDothtmlRoute
-  '/shower-doors-schaumburg-il.html': typeof ShowerDoorsSchaumburgIlDothtmlRoute
   '/shower-doors-skokie-il.html': typeof ShowerDoorsSkokieIlDothtmlRoute
   '/shower-doors-streamwood-il.html': typeof ShowerDoorsStreamwoodIlDothtmlRoute
   '/shower-doors-vernon-hills-il.html': typeof ShowerDoorsVernonHillsIlDothtmlRoute
@@ -415,6 +415,7 @@ export interface FileRouteTypes {
     | '/shower-doors-bannockburn-il.html'
     | '/shower-doors-bartlett-il.html'
     | '/shower-doors-buffalo-grove-il.html'
+    | '/shower-doors-deerfield-il.html'
     | '/shower-doors-des-plaines-il.html'
     | '/shower-doors-elk-grove-village-il.html'
     | '/shower-doors-evanston-il.html'
@@ -434,7 +435,6 @@ export interface FileRouteTypes {
     | '/shower-doors-riverwoods-il.html'
     | '/shower-doors-rolling-meadows-il.html'
     | '/shower-doors-roselle-il.html'
-    | '/shower-doors-schaumburg-il.html'
     | '/shower-doors-skokie-il.html'
     | '/shower-doors-streamwood-il.html'
     | '/shower-doors-vernon-hills-il.html'
@@ -456,6 +456,7 @@ export interface FileRouteTypes {
     | '/shower-doors-bannockburn-il.html'
     | '/shower-doors-bartlett-il.html'
     | '/shower-doors-buffalo-grove-il.html'
+    | '/shower-doors-deerfield-il.html'
     | '/shower-doors-des-plaines-il.html'
     | '/shower-doors-elk-grove-village-il.html'
     | '/shower-doors-evanston-il.html'
@@ -475,7 +476,6 @@ export interface FileRouteTypes {
     | '/shower-doors-riverwoods-il.html'
     | '/shower-doors-rolling-meadows-il.html'
     | '/shower-doors-roselle-il.html'
-    | '/shower-doors-schaumburg-il.html'
     | '/shower-doors-skokie-il.html'
     | '/shower-doors-streamwood-il.html'
     | '/shower-doors-vernon-hills-il.html'
@@ -497,6 +497,7 @@ export interface FileRouteTypes {
     | '/shower-doors-bannockburn-il.html'
     | '/shower-doors-bartlett-il.html'
     | '/shower-doors-buffalo-grove-il.html'
+    | '/shower-doors-deerfield-il.html'
     | '/shower-doors-des-plaines-il.html'
     | '/shower-doors-elk-grove-village-il.html'
     | '/shower-doors-evanston-il.html'
@@ -516,7 +517,6 @@ export interface FileRouteTypes {
     | '/shower-doors-riverwoods-il.html'
     | '/shower-doors-rolling-meadows-il.html'
     | '/shower-doors-roselle-il.html'
-    | '/shower-doors-schaumburg-il.html'
     | '/shower-doors-skokie-il.html'
     | '/shower-doors-streamwood-il.html'
     | '/shower-doors-vernon-hills-il.html'
@@ -539,6 +539,7 @@ export interface RootRouteChildren {
   ShowerDoorsBannockburnIlDothtmlRoute: typeof ShowerDoorsBannockburnIlDothtmlRoute
   ShowerDoorsBartlettIlDothtmlRoute: typeof ShowerDoorsBartlettIlDothtmlRoute
   ShowerDoorsBuffaloGroveIlDothtmlRoute: typeof ShowerDoorsBuffaloGroveIlDothtmlRoute
+  ShowerDoorsDeerfieldIlDothtmlRoute: typeof ShowerDoorsDeerfieldIlDothtmlRoute
   ShowerDoorsDesPlainesIlDothtmlRoute: typeof ShowerDoorsDesPlainesIlDothtmlRoute
   ShowerDoorsElkGroveVillageIlDothtmlRoute: typeof ShowerDoorsElkGroveVillageIlDothtmlRoute
   ShowerDoorsEvanstonIlDothtmlRoute: typeof ShowerDoorsEvanstonIlDothtmlRoute
@@ -558,7 +559,6 @@ export interface RootRouteChildren {
   ShowerDoorsRiverwoodsIlDothtmlRoute: typeof ShowerDoorsRiverwoodsIlDothtmlRoute
   ShowerDoorsRollingMeadowsIlDothtmlRoute: typeof ShowerDoorsRollingMeadowsIlDothtmlRoute
   ShowerDoorsRoselleIlDothtmlRoute: typeof ShowerDoorsRoselleIlDothtmlRoute
-  ShowerDoorsSchaumburgIlDothtmlRoute: typeof ShowerDoorsSchaumburgIlDothtmlRoute
   ShowerDoorsSkokieIlDothtmlRoute: typeof ShowerDoorsSkokieIlDothtmlRoute
   ShowerDoorsStreamwoodIlDothtmlRoute: typeof ShowerDoorsStreamwoodIlDothtmlRoute
   ShowerDoorsVernonHillsIlDothtmlRoute: typeof ShowerDoorsVernonHillsIlDothtmlRoute
@@ -633,13 +633,6 @@ declare module '@tanstack/react-router' {
       path: '/shower-doors-skokie-il.html'
       fullPath: '/shower-doors-skokie-il.html'
       preLoaderRoute: typeof ShowerDoorsSkokieIlDothtmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/shower-doors-schaumburg-il.html': {
-      id: '/shower-doors-schaumburg-il.html'
-      path: '/shower-doors-schaumburg-il.html'
-      fullPath: '/shower-doors-schaumburg-il.html'
-      preLoaderRoute: typeof ShowerDoorsSchaumburgIlDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/shower-doors-roselle-il.html': {
@@ -775,6 +768,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShowerDoorsDesPlainesIlDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/shower-doors-deerfield-il.html': {
+      id: '/shower-doors-deerfield-il.html'
+      path: '/shower-doors-deerfield-il.html'
+      fullPath: '/shower-doors-deerfield-il.html'
+      preLoaderRoute: typeof ShowerDoorsDeerfieldIlDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/shower-doors-buffalo-grove-il.html': {
       id: '/shower-doors-buffalo-grove-il.html'
       path: '/shower-doors-buffalo-grove-il.html'
@@ -861,6 +861,7 @@ const rootRouteChildren: RootRouteChildren = {
   ShowerDoorsBannockburnIlDothtmlRoute: ShowerDoorsBannockburnIlDothtmlRoute,
   ShowerDoorsBartlettIlDothtmlRoute: ShowerDoorsBartlettIlDothtmlRoute,
   ShowerDoorsBuffaloGroveIlDothtmlRoute: ShowerDoorsBuffaloGroveIlDothtmlRoute,
+  ShowerDoorsDeerfieldIlDothtmlRoute: ShowerDoorsDeerfieldIlDothtmlRoute,
   ShowerDoorsDesPlainesIlDothtmlRoute: ShowerDoorsDesPlainesIlDothtmlRoute,
   ShowerDoorsElkGroveVillageIlDothtmlRoute:
     ShowerDoorsElkGroveVillageIlDothtmlRoute,
@@ -884,7 +885,6 @@ const rootRouteChildren: RootRouteChildren = {
   ShowerDoorsRollingMeadowsIlDothtmlRoute:
     ShowerDoorsRollingMeadowsIlDothtmlRoute,
   ShowerDoorsRoselleIlDothtmlRoute: ShowerDoorsRoselleIlDothtmlRoute,
-  ShowerDoorsSchaumburgIlDothtmlRoute: ShowerDoorsSchaumburgIlDothtmlRoute,
   ShowerDoorsSkokieIlDothtmlRoute: ShowerDoorsSkokieIlDothtmlRoute,
   ShowerDoorsStreamwoodIlDothtmlRoute: ShowerDoorsStreamwoodIlDothtmlRoute,
   ShowerDoorsVernonHillsIlDothtmlRoute: ShowerDoorsVernonHillsIlDothtmlRoute,
