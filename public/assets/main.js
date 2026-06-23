@@ -202,6 +202,21 @@ document.querySelectorAll('.related-card').forEach(card=>{
   holder.appendChild(img);
 });
 
+// Highlight the active service in the Services dropdown (and mobile menu).
+(function(){
+  const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  if(!here || here==='index.html' || here==='') return;
+  document.querySelectorAll('.nav-dropdown-menu a, .mm-services-group a').forEach(a=>{
+    const href=(a.getAttribute('href')||'').split('/').pop().split('#')[0].toLowerCase();
+    if(href && href===here){
+      a.classList.add('is-active');
+      a.setAttribute('aria-current','page');
+    }
+  });
+  // Also mark the top-level "Services" toggle as active so users see they're in a service.
+  document.querySelectorAll('.nav-dropdown .nav-dropdown-toggle').forEach(t=>t.classList.add('is-in-section'));
+})();
+
 /* ============================================================
    WHY
    ============================================================ */
