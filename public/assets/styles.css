@@ -616,3 +616,17 @@
 .cta-card h2{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:500;letter-spacing:-.02em;margin-bottom:1rem}
 .cta-card p{color:var(--steel);font-size:1.05rem;max-width:54ch;margin:0 auto 1.8rem}
 .cta-card .hero-actions{justify-content:center}
+
+/* Active service highlight in Services dropdown + mobile menu */
+.nav-dropdown-menu a.is-active,
+.mm-services-group a.is-active{
+  background:linear-gradient(90deg, rgba(87,196,208,0.18), rgba(87,196,208,0.04));
+  color:var(--teal,#2a8a93) !important;
+  font-weight:600;
+  position:relative;
+}
+.nav-dropdown-menu a.is-active::before{
+  content:""; position:absolute; left:0; top:6px; bottom:6px; width:3px;
+  background:var(--teal,#2a8a93); border-radius:0 3px 3px 0;
+}
+.nav-dropdown-toggle.is-in-section{ color:var(--teal,#2a8a93); font-weight:600; }
