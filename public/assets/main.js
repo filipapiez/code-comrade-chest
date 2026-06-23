@@ -222,11 +222,14 @@ const _wg=document.getElementById('whyGrid'); if(_wg) _wg.innerHTML = why.map((w
   }).join('');
 
   function applyFilter(f){
+    const allowed=(f||'all').split(',').map(s=>s.trim());
+    const showAll=allowed.includes('all');
     grid.querySelectorAll('.tile').forEach(t=>{
-      const show=(f==='all'||t.dataset.cat===f);
+      const show=showAll||allowed.includes(t.dataset.cat);
       t.classList.toggle('hide',!show);
     });
   }
+
   // Auto-filter on service pages
   if(defaultCat!=='all') applyFilter(defaultCat);
 
