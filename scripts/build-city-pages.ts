@@ -153,7 +153,7 @@ function render(c: City): string {
       telephone: "+1-224-427-9199",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Schaumburg",
+        addressLocality: "Deerfield",
         addressRegion: "IL",
         addressCountry: "US",
       },
