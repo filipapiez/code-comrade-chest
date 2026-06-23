@@ -12,6 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TubDoorsDothtmlRouteImport } from './routes/tub-doors[.]html'
 import { Route as ShowerEnclosuresDothtmlRouteImport } from './routes/shower-enclosures[.]html'
 import { Route as ShowerDoorsDothtmlRouteImport } from './routes/shower-doors[.]html'
+import { Route as ShowerDoorsSchaumburgIlDothtmlRouteImport } from './routes/shower-doors-schaumburg-il[.]html'
+import { Route as ShowerDoorsPalatineIlDothtmlRouteImport } from './routes/shower-doors-palatine-il[.]html'
+import { Route as ShowerDoorsHoffmanEstatesIlDothtmlRouteImport } from './routes/shower-doors-hoffman-estates-il[.]html'
+import { Route as ShowerDoorsElkGroveVillageIlDothtmlRouteImport } from './routes/shower-doors-elk-grove-village-il[.]html'
+import { Route as ShowerDoorsArlingtonHeightsIlDothtmlRouteImport } from './routes/shower-doors-arlington-heights-il[.]html'
 import { Route as ReplacementGlassDothtmlRouteImport } from './routes/replacement-glass[.]html'
 import { Route as IndexDothtmlRouteImport } from './routes/index[.]html'
 import { Route as FramelessVsSemiFramelessShowerDoorsDothtmlRouteImport } from './routes/frameless-vs-semi-frameless-shower-doors[.]html'
@@ -34,6 +39,36 @@ const ShowerDoorsDothtmlRoute = ShowerDoorsDothtmlRouteImport.update({
   path: '/shower-doors.html',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShowerDoorsSchaumburgIlDothtmlRoute =
+  ShowerDoorsSchaumburgIlDothtmlRouteImport.update({
+    id: '/shower-doors-schaumburg-il.html',
+    path: '/shower-doors-schaumburg-il.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShowerDoorsPalatineIlDothtmlRoute =
+  ShowerDoorsPalatineIlDothtmlRouteImport.update({
+    id: '/shower-doors-palatine-il.html',
+    path: '/shower-doors-palatine-il.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShowerDoorsHoffmanEstatesIlDothtmlRoute =
+  ShowerDoorsHoffmanEstatesIlDothtmlRouteImport.update({
+    id: '/shower-doors-hoffman-estates-il.html',
+    path: '/shower-doors-hoffman-estates-il.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShowerDoorsElkGroveVillageIlDothtmlRoute =
+  ShowerDoorsElkGroveVillageIlDothtmlRouteImport.update({
+    id: '/shower-doors-elk-grove-village-il.html',
+    path: '/shower-doors-elk-grove-village-il.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShowerDoorsArlingtonHeightsIlDothtmlRoute =
+  ShowerDoorsArlingtonHeightsIlDothtmlRouteImport.update({
+    id: '/shower-doors-arlington-heights-il.html',
+    path: '/shower-doors-arlington-heights-il.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ReplacementGlassDothtmlRoute = ReplacementGlassDothtmlRouteImport.update({
   id: '/replacement-glass.html',
   path: '/replacement-glass.html',
@@ -75,6 +110,11 @@ export interface FileRoutesByFullPath {
   '/frameless-vs-semi-frameless-shower-doors.html': typeof FramelessVsSemiFramelessShowerDoorsDothtmlRoute
   '/index.html': typeof IndexDothtmlRoute
   '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
+  '/shower-doors-arlington-heights-il.html': typeof ShowerDoorsArlingtonHeightsIlDothtmlRoute
+  '/shower-doors-elk-grove-village-il.html': typeof ShowerDoorsElkGroveVillageIlDothtmlRoute
+  '/shower-doors-hoffman-estates-il.html': typeof ShowerDoorsHoffmanEstatesIlDothtmlRoute
+  '/shower-doors-palatine-il.html': typeof ShowerDoorsPalatineIlDothtmlRoute
+  '/shower-doors-schaumburg-il.html': typeof ShowerDoorsSchaumburgIlDothtmlRoute
   '/shower-doors.html': typeof ShowerDoorsDothtmlRoute
   '/shower-enclosures.html': typeof ShowerEnclosuresDothtmlRoute
   '/tub-doors.html': typeof TubDoorsDothtmlRoute
@@ -86,6 +126,11 @@ export interface FileRoutesByTo {
   '/frameless-vs-semi-frameless-shower-doors.html': typeof FramelessVsSemiFramelessShowerDoorsDothtmlRoute
   '/index.html': typeof IndexDothtmlRoute
   '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
+  '/shower-doors-arlington-heights-il.html': typeof ShowerDoorsArlingtonHeightsIlDothtmlRoute
+  '/shower-doors-elk-grove-village-il.html': typeof ShowerDoorsElkGroveVillageIlDothtmlRoute
+  '/shower-doors-hoffman-estates-il.html': typeof ShowerDoorsHoffmanEstatesIlDothtmlRoute
+  '/shower-doors-palatine-il.html': typeof ShowerDoorsPalatineIlDothtmlRoute
+  '/shower-doors-schaumburg-il.html': typeof ShowerDoorsSchaumburgIlDothtmlRoute
   '/shower-doors.html': typeof ShowerDoorsDothtmlRoute
   '/shower-enclosures.html': typeof ShowerEnclosuresDothtmlRoute
   '/tub-doors.html': typeof TubDoorsDothtmlRoute
@@ -98,6 +143,11 @@ export interface FileRoutesById {
   '/frameless-vs-semi-frameless-shower-doors.html': typeof FramelessVsSemiFramelessShowerDoorsDothtmlRoute
   '/index.html': typeof IndexDothtmlRoute
   '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
+  '/shower-doors-arlington-heights-il.html': typeof ShowerDoorsArlingtonHeightsIlDothtmlRoute
+  '/shower-doors-elk-grove-village-il.html': typeof ShowerDoorsElkGroveVillageIlDothtmlRoute
+  '/shower-doors-hoffman-estates-il.html': typeof ShowerDoorsHoffmanEstatesIlDothtmlRoute
+  '/shower-doors-palatine-il.html': typeof ShowerDoorsPalatineIlDothtmlRoute
+  '/shower-doors-schaumburg-il.html': typeof ShowerDoorsSchaumburgIlDothtmlRoute
   '/shower-doors.html': typeof ShowerDoorsDothtmlRoute
   '/shower-enclosures.html': typeof ShowerEnclosuresDothtmlRoute
   '/tub-doors.html': typeof TubDoorsDothtmlRoute
@@ -111,6 +161,11 @@ export interface FileRouteTypes {
     | '/frameless-vs-semi-frameless-shower-doors.html'
     | '/index.html'
     | '/replacement-glass.html'
+    | '/shower-doors-arlington-heights-il.html'
+    | '/shower-doors-elk-grove-village-il.html'
+    | '/shower-doors-hoffman-estates-il.html'
+    | '/shower-doors-palatine-il.html'
+    | '/shower-doors-schaumburg-il.html'
     | '/shower-doors.html'
     | '/shower-enclosures.html'
     | '/tub-doors.html'
@@ -122,6 +177,11 @@ export interface FileRouteTypes {
     | '/frameless-vs-semi-frameless-shower-doors.html'
     | '/index.html'
     | '/replacement-glass.html'
+    | '/shower-doors-arlington-heights-il.html'
+    | '/shower-doors-elk-grove-village-il.html'
+    | '/shower-doors-hoffman-estates-il.html'
+    | '/shower-doors-palatine-il.html'
+    | '/shower-doors-schaumburg-il.html'
     | '/shower-doors.html'
     | '/shower-enclosures.html'
     | '/tub-doors.html'
@@ -133,6 +193,11 @@ export interface FileRouteTypes {
     | '/frameless-vs-semi-frameless-shower-doors.html'
     | '/index.html'
     | '/replacement-glass.html'
+    | '/shower-doors-arlington-heights-il.html'
+    | '/shower-doors-elk-grove-village-il.html'
+    | '/shower-doors-hoffman-estates-il.html'
+    | '/shower-doors-palatine-il.html'
+    | '/shower-doors-schaumburg-il.html'
     | '/shower-doors.html'
     | '/shower-enclosures.html'
     | '/tub-doors.html'
@@ -145,6 +210,11 @@ export interface RootRouteChildren {
   FramelessVsSemiFramelessShowerDoorsDothtmlRoute: typeof FramelessVsSemiFramelessShowerDoorsDothtmlRoute
   IndexDothtmlRoute: typeof IndexDothtmlRoute
   ReplacementGlassDothtmlRoute: typeof ReplacementGlassDothtmlRoute
+  ShowerDoorsArlingtonHeightsIlDothtmlRoute: typeof ShowerDoorsArlingtonHeightsIlDothtmlRoute
+  ShowerDoorsElkGroveVillageIlDothtmlRoute: typeof ShowerDoorsElkGroveVillageIlDothtmlRoute
+  ShowerDoorsHoffmanEstatesIlDothtmlRoute: typeof ShowerDoorsHoffmanEstatesIlDothtmlRoute
+  ShowerDoorsPalatineIlDothtmlRoute: typeof ShowerDoorsPalatineIlDothtmlRoute
+  ShowerDoorsSchaumburgIlDothtmlRoute: typeof ShowerDoorsSchaumburgIlDothtmlRoute
   ShowerDoorsDothtmlRoute: typeof ShowerDoorsDothtmlRoute
   ShowerEnclosuresDothtmlRoute: typeof ShowerEnclosuresDothtmlRoute
   TubDoorsDothtmlRoute: typeof TubDoorsDothtmlRoute
@@ -171,6 +241,41 @@ declare module '@tanstack/react-router' {
       path: '/shower-doors.html'
       fullPath: '/shower-doors.html'
       preLoaderRoute: typeof ShowerDoorsDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shower-doors-schaumburg-il.html': {
+      id: '/shower-doors-schaumburg-il.html'
+      path: '/shower-doors-schaumburg-il.html'
+      fullPath: '/shower-doors-schaumburg-il.html'
+      preLoaderRoute: typeof ShowerDoorsSchaumburgIlDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shower-doors-palatine-il.html': {
+      id: '/shower-doors-palatine-il.html'
+      path: '/shower-doors-palatine-il.html'
+      fullPath: '/shower-doors-palatine-il.html'
+      preLoaderRoute: typeof ShowerDoorsPalatineIlDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shower-doors-hoffman-estates-il.html': {
+      id: '/shower-doors-hoffman-estates-il.html'
+      path: '/shower-doors-hoffman-estates-il.html'
+      fullPath: '/shower-doors-hoffman-estates-il.html'
+      preLoaderRoute: typeof ShowerDoorsHoffmanEstatesIlDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shower-doors-elk-grove-village-il.html': {
+      id: '/shower-doors-elk-grove-village-il.html'
+      path: '/shower-doors-elk-grove-village-il.html'
+      fullPath: '/shower-doors-elk-grove-village-il.html'
+      preLoaderRoute: typeof ShowerDoorsElkGroveVillageIlDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shower-doors-arlington-heights-il.html': {
+      id: '/shower-doors-arlington-heights-il.html'
+      path: '/shower-doors-arlington-heights-il.html'
+      fullPath: '/shower-doors-arlington-heights-il.html'
+      preLoaderRoute: typeof ShowerDoorsArlingtonHeightsIlDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/replacement-glass.html': {
@@ -226,6 +331,14 @@ const rootRouteChildren: RootRouteChildren = {
     FramelessVsSemiFramelessShowerDoorsDothtmlRoute,
   IndexDothtmlRoute: IndexDothtmlRoute,
   ReplacementGlassDothtmlRoute: ReplacementGlassDothtmlRoute,
+  ShowerDoorsArlingtonHeightsIlDothtmlRoute:
+    ShowerDoorsArlingtonHeightsIlDothtmlRoute,
+  ShowerDoorsElkGroveVillageIlDothtmlRoute:
+    ShowerDoorsElkGroveVillageIlDothtmlRoute,
+  ShowerDoorsHoffmanEstatesIlDothtmlRoute:
+    ShowerDoorsHoffmanEstatesIlDothtmlRoute,
+  ShowerDoorsPalatineIlDothtmlRoute: ShowerDoorsPalatineIlDothtmlRoute,
+  ShowerDoorsSchaumburgIlDothtmlRoute: ShowerDoorsSchaumburgIlDothtmlRoute,
   ShowerDoorsDothtmlRoute: ShowerDoorsDothtmlRoute,
   ShowerEnclosuresDothtmlRoute: ShowerEnclosuresDothtmlRoute,
   TubDoorsDothtmlRoute: TubDoorsDothtmlRoute,
