@@ -265,6 +265,10 @@
   }
   .tile-overlay .cat{font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;font-weight:700;color:var(--glass)}
   .tile-overlay h4{font-family:var(--display);font-weight:500;font-size:1.18rem;margin-top:.2rem}
+  a.tile{text-decoration:none;color:inherit;display:block}
+  .tile-cta{display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#fff;margin-top:.55rem;opacity:0;transform:translateY(6px);transition:opacity .35s var(--ease),transform .35s var(--ease)}
+  .tile-cta svg{width:14px;height:14px}
+  .tile:hover .tile-cta,.tile:focus-visible .tile-cta{opacity:1;transform:translateY(0)}
   .tile .badge{
     position:absolute;top:14px;left:14px;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
     background:rgba(255,255,255,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
@@ -272,6 +276,7 @@
   }
   .tile .badge svg{width:13px;height:13px;color:var(--glass-deep)}
   .tile.hide{display:none}
+
 
   /* ---------- modal / before-after ---------- */
   .modal{
