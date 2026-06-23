@@ -186,6 +186,22 @@ document.querySelectorAll('.svc').forEach(card=>{
   });
 });
 
+// Reliable thumbnails for "Other glass services" cards across browsers.
+document.querySelectorAll('.related-card').forEach(card=>{
+  const holder=card.querySelector('.rc-img');
+  if(!holder || holder.querySelector('img')) return;
+  const raw=card.style.getPropertyValue('--card-img') || getComputedStyle(holder).backgroundImage;
+  const match=raw && raw.match(/url\(["']?([^"')]+)["']?\)/);
+  if(!match || !match[1]) return;
+  const img=document.createElement('img');
+  img.src=match[1];
+  img.alt='';
+  img.loading='lazy';
+  img.decoding='async';
+  img.setAttribute('aria-hidden','true');
+  holder.appendChild(img);
+});
+
 /* ============================================================
    WHY
    ============================================================ */
