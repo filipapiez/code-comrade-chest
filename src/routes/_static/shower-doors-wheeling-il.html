@@ -64,7 +64,25 @@
       Makibaki
     </a>
     <div class="nav-links">
-      <a href="index.html#services">Services</a>
+      <div class="nav-dropdown" style="position:relative;display:inline-block;">
+        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" style="background:none;border:0;font:inherit;color:inherit;cursor:pointer;padding:0;display:inline-flex;align-items:center;gap:4px;">
+          Services
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" style="position:absolute;top:100%;left:0;display:none;background:#fff;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.12);border-radius:8px;padding:8px 0;z-index:100;">
+          <a href="shower-doors.html" style="display:block;padding:8px 16px;">Shower Doors</a>
+          <a href="tub-doors.html" style="display:block;padding:8px 16px;">Tub Doors</a>
+          <a href="shower-enclosures.html" style="display:block;padding:8px 16px;">Shower Enclosures</a>
+          <a href="custom-shower-glass.html" style="display:block;padding:8px 16px;">Custom Glass</a>
+          <a href="bathroom-remodel-glass.html" style="display:block;padding:8px 16px;">Bathroom Remodel</a>
+          <a href="replacement-glass.html" style="display:block;padding:8px 16px;">Replacement Glass</a>
+          <a href="mirrors.html" style="display:block;padding:8px 16px;">Mirrors &amp; Mirror Walls</a>
+          <a href="glass-railings.html" style="display:block;padding:8px 16px;">Glass Railings</a>
+          <a href="wine-cigar-rooms.html" style="display:block;padding:8px 16px;">Wine &amp; Cigar Rooms</a>
+          <a href="office-partitions.html" style="display:block;padding:8px 16px;">Office Partitions</a>
+          <a href="other-custom-glass.html" style="display:block;padding:8px 16px;">Other Custom Glass</a>
+        </div>
+      </div>
       <a href="shower-doors.html">Shower Doors</a>
       <a href="index.html#areas">Areas</a>
       <a href="#contact">Contact</a>
@@ -75,6 +93,13 @@
     </div>
   </div>
 </nav>
+<style>
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu { display:block !important; }
+  .nav-dropdown-menu a:hover { background:#f4f6f8; }
+  .mm-services-label { display:block; padding:8px 0; font-weight:600; opacity:0.7; text-transform:uppercase; font-size:12px; letter-spacing:0.5px; }
+  .mm-services-group a { padding-left:16px !important; }
+</style>
 
 <header class="hero band">
   <div class="hero-bg"></div>
