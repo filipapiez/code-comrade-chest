@@ -209,15 +209,20 @@ const _wg=document.getElementById('whyGrid'); if(_wg) _wg.innerHTML = why.map((w
 (function(){
   const grid=document.getElementById('galleryGrid');
   if(!grid) return;
-  const items=window.MAKI_GALLERY||[];
+  let items=window.MAKI_GALLERY||[];
   // On a service page (e.g. shower-enclosures.html), data-default-cat scopes the gallery to that service.
   const defaultCat=grid.getAttribute('data-default-cat')||'all';
+  // On the homepage, show only ONE tile per category — each tile links to the matching service page for "see more".
+  if(grid.hasAttribute('data-one-per-cat')){
+    const seen=new Set();
+    items=items.filter(p=>{ if(seen.has(p.cat)) return false; seen.add(p.cat); return true; });
+  }
   grid.innerHTML=items.map((p,i)=>{
     const link=(window.CAT_LINKS||CAT_LINKS)[p.cat]||'#contact';
     return `
     <a class="tile" data-cat="${p.cat||''}" data-i="${i}" data-reveal data-delay="${(i%3)+1}" href="${link}" aria-label="See more ${p.catLabel||'projects'}: ${p.title}">
       <img class="g-img" src="${p.src}" alt="${p.alt||p.title}" loading="lazy">
-      <span class="tile-overlay"><span class="cat">${p.catLabel||''}</span><span class="tile-title-wrap"><h4>${p.title}</h4><span class="tile-cta">View ${p.catLabel||'service'} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></span>
+      <span class="tile-overlay"><span class="cat">${p.catLabel||''}</span><span class="tile-title-wrap"><h4>${p.title}</h4><span class="tile-cta">See more ${p.catLabel||'projects'} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></span>
     </a>`;
   }).join('');
 
