@@ -14,6 +14,7 @@ import { Route as ShowerEnclosuresDothtmlRouteImport } from './routes/shower-enc
 import { Route as ShowerDoorsDothtmlRouteImport } from './routes/shower-doors[.]html'
 import { Route as ReplacementGlassDothtmlRouteImport } from './routes/replacement-glass[.]html'
 import { Route as IndexDothtmlRouteImport } from './routes/index[.]html'
+import { Route as FramelessVsSemiFramelessShowerDoorsDothtmlRouteImport } from './routes/frameless-vs-semi-frameless-shower-doors[.]html'
 import { Route as CustomShowerGlassDothtmlRouteImport } from './routes/custom-shower-glass[.]html'
 import { Route as BathroomRemodelGlassDothtmlRouteImport } from './routes/bathroom-remodel-glass[.]html'
 import { Route as IndexRouteImport } from './routes/index'
@@ -43,6 +44,12 @@ const IndexDothtmlRoute = IndexDothtmlRouteImport.update({
   path: '/index.html',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FramelessVsSemiFramelessShowerDoorsDothtmlRoute =
+  FramelessVsSemiFramelessShowerDoorsDothtmlRouteImport.update({
+    id: '/frameless-vs-semi-frameless-shower-doors.html',
+    path: '/frameless-vs-semi-frameless-shower-doors.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CustomShowerGlassDothtmlRoute =
   CustomShowerGlassDothtmlRouteImport.update({
     id: '/custom-shower-glass.html',
@@ -65,6 +72,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/bathroom-remodel-glass.html': typeof BathroomRemodelGlassDothtmlRoute
   '/custom-shower-glass.html': typeof CustomShowerGlassDothtmlRoute
+  '/frameless-vs-semi-frameless-shower-doors.html': typeof FramelessVsSemiFramelessShowerDoorsDothtmlRoute
   '/index.html': typeof IndexDothtmlRoute
   '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
   '/shower-doors.html': typeof ShowerDoorsDothtmlRoute
@@ -75,6 +83,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/bathroom-remodel-glass.html': typeof BathroomRemodelGlassDothtmlRoute
   '/custom-shower-glass.html': typeof CustomShowerGlassDothtmlRoute
+  '/frameless-vs-semi-frameless-shower-doors.html': typeof FramelessVsSemiFramelessShowerDoorsDothtmlRoute
   '/index.html': typeof IndexDothtmlRoute
   '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
   '/shower-doors.html': typeof ShowerDoorsDothtmlRoute
@@ -86,6 +95,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/bathroom-remodel-glass.html': typeof BathroomRemodelGlassDothtmlRoute
   '/custom-shower-glass.html': typeof CustomShowerGlassDothtmlRoute
+  '/frameless-vs-semi-frameless-shower-doors.html': typeof FramelessVsSemiFramelessShowerDoorsDothtmlRoute
   '/index.html': typeof IndexDothtmlRoute
   '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
   '/shower-doors.html': typeof ShowerDoorsDothtmlRoute
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/'
     | '/bathroom-remodel-glass.html'
     | '/custom-shower-glass.html'
+    | '/frameless-vs-semi-frameless-shower-doors.html'
     | '/index.html'
     | '/replacement-glass.html'
     | '/shower-doors.html'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/'
     | '/bathroom-remodel-glass.html'
     | '/custom-shower-glass.html'
+    | '/frameless-vs-semi-frameless-shower-doors.html'
     | '/index.html'
     | '/replacement-glass.html'
     | '/shower-doors.html'
@@ -118,6 +130,7 @@ export interface FileRouteTypes {
     | '/'
     | '/bathroom-remodel-glass.html'
     | '/custom-shower-glass.html'
+    | '/frameless-vs-semi-frameless-shower-doors.html'
     | '/index.html'
     | '/replacement-glass.html'
     | '/shower-doors.html'
@@ -129,6 +142,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BathroomRemodelGlassDothtmlRoute: typeof BathroomRemodelGlassDothtmlRoute
   CustomShowerGlassDothtmlRoute: typeof CustomShowerGlassDothtmlRoute
+  FramelessVsSemiFramelessShowerDoorsDothtmlRoute: typeof FramelessVsSemiFramelessShowerDoorsDothtmlRoute
   IndexDothtmlRoute: typeof IndexDothtmlRoute
   ReplacementGlassDothtmlRoute: typeof ReplacementGlassDothtmlRoute
   ShowerDoorsDothtmlRoute: typeof ShowerDoorsDothtmlRoute
@@ -173,6 +187,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/frameless-vs-semi-frameless-shower-doors.html': {
+      id: '/frameless-vs-semi-frameless-shower-doors.html'
+      path: '/frameless-vs-semi-frameless-shower-doors.html'
+      fullPath: '/frameless-vs-semi-frameless-shower-doors.html'
+      preLoaderRoute: typeof FramelessVsSemiFramelessShowerDoorsDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/custom-shower-glass.html': {
       id: '/custom-shower-glass.html'
       path: '/custom-shower-glass.html'
@@ -201,6 +222,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BathroomRemodelGlassDothtmlRoute: BathroomRemodelGlassDothtmlRoute,
   CustomShowerGlassDothtmlRoute: CustomShowerGlassDothtmlRoute,
+  FramelessVsSemiFramelessShowerDoorsDothtmlRoute:
+    FramelessVsSemiFramelessShowerDoorsDothtmlRoute,
   IndexDothtmlRoute: IndexDothtmlRoute,
   ReplacementGlassDothtmlRoute: ReplacementGlassDothtmlRoute,
   ShowerDoorsDothtmlRoute: ShowerDoorsDothtmlRoute,
@@ -210,13 +233,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
