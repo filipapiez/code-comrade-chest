@@ -86,7 +86,7 @@ function footer() {
     <div class="foot-top">
       <div>
         <div class="foot-brand"><svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="3" y="3" width="34" height="34" rx="9" fill="#fff" opacity="0.06"/><rect x="9" y="9" width="9.5" height="22" rx="2.5" fill="#57C4D0" opacity="0.9"/><rect x="21.5" y="9" width="9.5" height="22" rx="2.5" fill="#fff" opacity="0.7"/><rect x="9" y="9" width="22" height="22" rx="2.5" stroke="#fff" stroke-opacity="0.3"/></svg> Makibaki</div>
-        <p class="foot-tag">Premium Shower Doors &bull; Tub Doors &bull; Shower Enclosures &bull; Custom Glass<br>Schaumburg, IL</p>
+        <p class="foot-tag">Premium Shower Doors &bull; Tub Doors &bull; Shower Enclosures &bull; Custom Glass<br>Deerfield, IL</p>
       </div>
       <div class="foot-col">
         <h4>Services</h4>
