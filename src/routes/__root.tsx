@@ -77,14 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Makibaki — Premium Shower Glass in Schaumburg, IL" },
+      { name: "description", content: "Makibaki designs and installs premium shower doors, tub doors, enclosures, custom shower glass, mirrors and railings across Schaumburg, IL." },
+      { name: "author", content: "Makibaki Glass" },
+      { property: "og:title", content: "Makibaki — Premium Shower Glass in Schaumburg, IL" },
+      { property: "og:description", content: "Custom shower doors, enclosures, mirrors and glass railings — designed, measured and installed across Schaumburg, IL and the northwest suburbs." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
