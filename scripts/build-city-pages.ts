@@ -105,7 +105,7 @@ function footer() {
         <h4>Contact</h4>
         <a href="tel:+12244279199">224-427-9199</a>
         <a href="tel:+12245095420">224-509-5420</a>
-        <p>Schaumburg, IL</p>
+        <p>Deerfield, IL</p>
       </div>
     </div>
     <div class="foot-bottom"><span>&copy; <span id="year"></span> Makibaki. All rights reserved.</span></div>
