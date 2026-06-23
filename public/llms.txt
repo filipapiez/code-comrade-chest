@@ -1,0 +1,15 @@
+# Makibaki Glass
+
+> Premium shower doors, tub doors, custom shower enclosures, mirrors and glass railings — designed and installed in Schaumburg, IL and the northwest Chicago suburbs.
+
+Makibaki is a local glass studio serving Schaumburg, IL. We custom-measure and install frameless shower doors, tub doors, neo-angle and multi-panel enclosures, replacement glass, vanity and wall mirrors, glass railings, wine rooms and office partitions.
+
+## Pages
+
+- [Home](/): Overview of services and project gallery.
+- [Shower Doors](/shower-doors.html): Frameless and custom glass shower doors.
+- [Tub Doors](/tub-doors.html): Sliding and pivot tub door glass.
+- [Shower Enclosures](/shower-enclosures.html): Corner, neo-angle and multi-panel enclosures.
+- [Custom Shower Glass](/custom-shower-glass.html): Made-to-measure shower glass.
+- [Bathroom Remodel Glass](/bathroom-remodel-glass.html): Glass scope for bathroom remodels.
+- [Replacement Glass](/replacement-glass.html): Replacement panels and re-glazing.
