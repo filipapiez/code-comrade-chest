@@ -503,8 +503,9 @@
   .related a:hover{border-color:var(--glass);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
   .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem;margin-top:.4rem}
   .related-card{position:relative;display:block;border-radius:20px;overflow:hidden;background:var(--paper);border:1px solid var(--fog);text-decoration:none;color:var(--ink);transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease)}
-  .related-card .rc-img{display:block;height:170px;background-image:var(--card-img);background-size:cover;background-position:center;transition:transform .7s var(--ease);transform:scale(1.04);position:relative}
-  .related-card .rc-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,17,19,0) 55%,rgba(14,17,19,.35) 100%)}
+  .related-card .rc-img{display:block;height:170px;background-image:var(--card-img);background-size:cover;background-position:center;transition:transform .7s var(--ease);transform:scale(1.04);position:relative;overflow:hidden}
+  .related-card .rc-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}
+  .related-card .rc-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,17,19,0) 55%,rgba(14,17,19,.35) 100%);z-index:1}
   .related-card .rc-body{display:flex;justify-content:space-between;align-items:center;gap:.8rem;padding:1rem 1.15rem 1.05rem}
   .related-card .rc-text{display:flex;flex-direction:column;gap:.15rem;min-width:0}
   .related-card .rc-title{font-weight:700;font-size:1rem;letter-spacing:-.01em;line-height:1.2}
