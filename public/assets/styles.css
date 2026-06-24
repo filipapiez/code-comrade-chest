@@ -55,7 +55,10 @@
     display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
     font-weight:600;font-size:.95rem;letter-spacing:.01em;
     padding:.95rem 1.5rem;border-radius:100px;transition:transform .4s var(--ease),box-shadow .4s var(--ease),background .3s,color .3s;
-    white-space:nowrap;
+    white-space:nowrap;max-width:100%;
+  }
+  @media (max-width:600px){
+    .btn{white-space:normal;text-align:center;padding:.85rem 1.2rem;font-size:.9rem;line-height:1.25}
   }
   .btn svg{width:18px;height:18px}
   .btn-primary{background:var(--ink);color:#fff;box-shadow:var(--shadow-sm)}
