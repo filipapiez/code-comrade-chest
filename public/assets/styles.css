@@ -44,6 +44,8 @@
     letter-spacing:.22em;color:var(--glass-deep);display:inline-flex;align-items:center;gap:.6rem;
   }
   .eyebrow::before{content:"";width:26px;height:1.5px;background:var(--glass);display:inline-block}
+  .eyebrow + h2{margin:.9rem 0 1rem}
+  .eyebrow + h2 + p{margin-bottom:1.4rem}
   .lede{color:var(--steel);font-size:clamp(1rem,1.8vw,1.18rem);max-width:46ch}
 
   .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
