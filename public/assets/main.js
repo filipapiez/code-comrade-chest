@@ -386,6 +386,10 @@ form.addEventListener('submit',e=>{
   ok&=setErr('f-project',!project);
   ok&=setErr('f-message',message.length<5);
   if(ok){
+    const subject=`New Estimate Request — ${project} — ${name}`;
+    const body=`Name: ${name}\nPhone: ${form.phone.value.trim()}\nEmail: ${email}\nProject: ${project}\n\nMessage:\n${message}\n`;
+    const mailto=`mailto:makibaki@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href=mailto;
     form.style.display='none';
     success.classList.add('show');
     success.scrollIntoView({behavior:'smooth',block:'center'});
