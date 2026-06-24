@@ -414,8 +414,9 @@
   .float-call.open .float-toggle svg{transform:rotate(135deg)}
   @keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
 
-  .mobile-bar{
-    position:fixed;left:0;right:0;bottom:0;z-index:75;display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  .mobile-bar{display:none !important;}
+  .mobile-bar-hidden{
+    position:fixed;left:0;right:0;bottom:0;z-index:75;display:none;grid-template-columns:1fr 1fr;gap:1px;
     background:var(--fog);box-shadow:0 -8px 24px rgba(14,17,19,.1);
   }
   .mobile-bar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.15rem;background:var(--ink);color:#fff;padding:.7rem;font-weight:600;font-size:.92rem}
