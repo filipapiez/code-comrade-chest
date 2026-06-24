@@ -456,8 +456,7 @@
     .mobile-bar{display:none}
     .foot-top{grid-template-columns:2fr 1fr 1fr 1.2fr}
   }
-  body{padding-bottom:64px}
-  @media (min-width:900px){body{padding-bottom:0}}
+  body{padding-bottom:0}
 
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
