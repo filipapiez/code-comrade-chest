@@ -49,6 +49,7 @@ import { Route as ShowerDoorsArlingtonHeightsIlDothtmlRouteImport } from './rout
 import { Route as ShowerDoorBuyersGuideDothtmlRouteImport } from './routes/shower-door-buyers-guide[.]html'
 import { Route as ReplacementGlassDothtmlRouteImport } from './routes/replacement-glass[.]html'
 import { Route as ReplacementGlassGuideDothtmlRouteImport } from './routes/replacement-glass-guide[.]html'
+import { Route as RemodelingDothtmlRouteImport } from './routes/remodeling[.]html'
 import { Route as OtherCustomGlassDothtmlRouteImport } from './routes/other-custom-glass[.]html'
 import { Route as OtherCustomGlassGuideDothtmlRouteImport } from './routes/other-custom-glass-guide[.]html'
 import { Route as OfficePartitionsDothtmlRouteImport } from './routes/office-partitions[.]html'
@@ -300,6 +301,11 @@ const ReplacementGlassGuideDothtmlRoute =
     path: '/replacement-glass-guide.html',
     getParentRoute: () => rootRouteImport,
   } as any)
+const RemodelingDothtmlRoute = RemodelingDothtmlRouteImport.update({
+  id: '/remodeling.html',
+  path: '/remodeling.html',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OtherCustomGlassDothtmlRoute = OtherCustomGlassDothtmlRouteImport.update({
   id: '/other-custom-glass.html',
   path: '/other-custom-glass.html',
@@ -401,6 +407,7 @@ export interface FileRoutesByFullPath {
   '/office-partitions.html': typeof OfficePartitionsDothtmlRoute
   '/other-custom-glass-guide.html': typeof OtherCustomGlassGuideDothtmlRoute
   '/other-custom-glass.html': typeof OtherCustomGlassDothtmlRoute
+  '/remodeling.html': typeof RemodelingDothtmlRoute
   '/replacement-glass-guide.html': typeof ReplacementGlassGuideDothtmlRoute
   '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
   '/shower-door-buyers-guide.html': typeof ShowerDoorBuyersGuideDothtmlRoute
@@ -458,6 +465,7 @@ export interface FileRoutesByTo {
   '/office-partitions.html': typeof OfficePartitionsDothtmlRoute
   '/other-custom-glass-guide.html': typeof OtherCustomGlassGuideDothtmlRoute
   '/other-custom-glass.html': typeof OtherCustomGlassDothtmlRoute
+  '/remodeling.html': typeof RemodelingDothtmlRoute
   '/replacement-glass-guide.html': typeof ReplacementGlassGuideDothtmlRoute
   '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
   '/shower-door-buyers-guide.html': typeof ShowerDoorBuyersGuideDothtmlRoute
@@ -516,6 +524,7 @@ export interface FileRoutesById {
   '/office-partitions.html': typeof OfficePartitionsDothtmlRoute
   '/other-custom-glass-guide.html': typeof OtherCustomGlassGuideDothtmlRoute
   '/other-custom-glass.html': typeof OtherCustomGlassDothtmlRoute
+  '/remodeling.html': typeof RemodelingDothtmlRoute
   '/replacement-glass-guide.html': typeof ReplacementGlassGuideDothtmlRoute
   '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
   '/shower-door-buyers-guide.html': typeof ShowerDoorBuyersGuideDothtmlRoute
@@ -575,6 +584,7 @@ export interface FileRouteTypes {
     | '/office-partitions.html'
     | '/other-custom-glass-guide.html'
     | '/other-custom-glass.html'
+    | '/remodeling.html'
     | '/replacement-glass-guide.html'
     | '/replacement-glass.html'
     | '/shower-door-buyers-guide.html'
@@ -632,6 +642,7 @@ export interface FileRouteTypes {
     | '/office-partitions.html'
     | '/other-custom-glass-guide.html'
     | '/other-custom-glass.html'
+    | '/remodeling.html'
     | '/replacement-glass-guide.html'
     | '/replacement-glass.html'
     | '/shower-door-buyers-guide.html'
@@ -689,6 +700,7 @@ export interface FileRouteTypes {
     | '/office-partitions.html'
     | '/other-custom-glass-guide.html'
     | '/other-custom-glass.html'
+    | '/remodeling.html'
     | '/replacement-glass-guide.html'
     | '/replacement-glass.html'
     | '/shower-door-buyers-guide.html'
@@ -747,6 +759,7 @@ export interface RootRouteChildren {
   OfficePartitionsDothtmlRoute: typeof OfficePartitionsDothtmlRoute
   OtherCustomGlassGuideDothtmlRoute: typeof OtherCustomGlassGuideDothtmlRoute
   OtherCustomGlassDothtmlRoute: typeof OtherCustomGlassDothtmlRoute
+  RemodelingDothtmlRoute: typeof RemodelingDothtmlRoute
   ReplacementGlassGuideDothtmlRoute: typeof ReplacementGlassGuideDothtmlRoute
   ReplacementGlassDothtmlRoute: typeof ReplacementGlassDothtmlRoute
   ShowerDoorBuyersGuideDothtmlRoute: typeof ShowerDoorBuyersGuideDothtmlRoute
@@ -1071,6 +1084,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReplacementGlassGuideDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/remodeling.html': {
+      id: '/remodeling.html'
+      path: '/remodeling.html'
+      fullPath: '/remodeling.html'
+      preLoaderRoute: typeof RemodelingDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/other-custom-glass.html': {
       id: '/other-custom-glass.html'
       path: '/other-custom-glass.html'
@@ -1196,6 +1216,7 @@ const rootRouteChildren: RootRouteChildren = {
   OfficePartitionsDothtmlRoute: OfficePartitionsDothtmlRoute,
   OtherCustomGlassGuideDothtmlRoute: OtherCustomGlassGuideDothtmlRoute,
   OtherCustomGlassDothtmlRoute: OtherCustomGlassDothtmlRoute,
+  RemodelingDothtmlRoute: RemodelingDothtmlRoute,
   ReplacementGlassGuideDothtmlRoute: ReplacementGlassGuideDothtmlRoute,
   ReplacementGlassDothtmlRoute: ReplacementGlassDothtmlRoute,
   ShowerDoorBuyersGuideDothtmlRoute: ShowerDoorBuyersGuideDothtmlRoute,
