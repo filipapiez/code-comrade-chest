@@ -123,12 +123,12 @@
   .mobile-menu .mm-foot a{border-bottom:0;padding:.95rem 1.2rem;text-align:center;font-size:1rem}
   .mobile-menu .mm-foot a.btn-primary{color:#fff}
   .mobile-menu .mm-foot a.btn-outline{color:var(--ink)}
-  .mobile-menu details.mm-services{border-bottom:1px solid var(--fog)}
-  .mobile-menu details.mm-services > summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:var(--display);font-size:1.15rem;font-weight:500;padding:.7rem 0;color:var(--ink)}
+  .mobile-menu details.mm-services{border:0}
+  .mobile-menu details.mm-services > summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:var(--display);font-size:1.15rem;font-weight:500;padding:.7rem 0;border-bottom:1px solid var(--fog);color:var(--ink);line-height:1.2}
   .mobile-menu details.mm-services > summary::-webkit-details-marker{display:none}
   .mobile-menu details.mm-services > summary::after{content:"";width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s ease;margin-right:6px}
   .mobile-menu details.mm-services[open] > summary::after{transform:rotate(-135deg);margin-top:4px}
-  .mobile-menu details.mm-services .mm-services-group{padding:0 0 .6rem}
+  .mobile-menu details.mm-services .mm-services-group{padding:.4rem 0 .6rem}
   .mobile-menu details.mm-services .mm-services-group a{border-bottom:0}
 
   /* ---------- hero ---------- */
