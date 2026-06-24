@@ -81,9 +81,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Makibaki designs and installs premium shower doors, tub doors, enclosures, custom shower glass, mirrors and railings across Deerfield, IL." },
       { name: "author", content: "Makibaki Glass" },
       { property: "og:title", content: "Makibaki — Premium Shower Glass in Deerfield, IL" },
-      { property: "og:description", content: "Custom shower doors, enclosures, mirrors and glass railings — designed, measured and installed across Deerfield, IL and the northwest suburbs." },
+      { property: "og:description", content: "Makibaki designs and installs premium shower doors, tub doors, enclosures, custom shower glass, mirrors and railings across Deerfield, IL." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Makibaki — Premium Shower Glass in Deerfield, IL" },
+      { name: "twitter:description", content: "Makibaki designs and installs premium shower doors, tub doors, enclosures, custom shower glass, mirrors and railings across Deerfield, IL." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/65924330-d84d-4de0-a177-22a8fccc48c5/id-preview-75ea5882--6c261f2d-1e8b-4e36-b754-3c43b777ada6.lovable.app-1782235339141.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/65924330-d84d-4de0-a177-22a8fccc48c5/id-preview-75ea5882--6c261f2d-1e8b-4e36-b754-3c43b777ada6.lovable.app-1782235339141.png" },
     ],
     links: [
       {
