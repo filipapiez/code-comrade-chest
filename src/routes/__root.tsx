@@ -94,6 +94,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", type: "image/png", href: "/__l5e/assets-v1/5ccfa58c-1102-42d0-852b-10208c7c374d/makibaki-favicon.png" },
       { rel: "apple-touch-icon", href: "/__l5e/assets-v1/5ccfa58c-1102-42d0-852b-10208c7c374d/makibaki-favicon.png" },
     ],
+    scripts: [
+      { src: "https://www.googletagmanager.com/gtag/js?id=G-6MJ8M5QM5V", async: true },
+      { children: "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-6MJ8M5QM5V');" },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
