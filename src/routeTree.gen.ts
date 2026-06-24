@@ -10,8 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WineCigarRoomsDothtmlRouteImport } from './routes/wine-cigar-rooms[.]html'
+import { Route as WineCigarRoomGlassGuideDothtmlRouteImport } from './routes/wine-cigar-room-glass-guide[.]html'
 import { Route as TubDoorsDothtmlRouteImport } from './routes/tub-doors[.]html'
+import { Route as TubDoorBuyersGuideDothtmlRouteImport } from './routes/tub-door-buyers-guide[.]html'
 import { Route as ShowerEnclosuresDothtmlRouteImport } from './routes/shower-enclosures[.]html'
+import { Route as ShowerEnclosureBuyersGuideDothtmlRouteImport } from './routes/shower-enclosure-buyers-guide[.]html'
 import { Route as ShowerDoorsDothtmlRouteImport } from './routes/shower-doors[.]html'
 import { Route as ShowerDoorsWinnetkaIlDothtmlRouteImport } from './routes/shower-doors-winnetka-il[.]html'
 import { Route as ShowerDoorsWilmetteIlDothtmlRouteImport } from './routes/shower-doors-wilmette-il[.]html'
@@ -43,15 +46,23 @@ import { Route as ShowerDoorsBuffaloGroveIlDothtmlRouteImport } from './routes/s
 import { Route as ShowerDoorsBartlettIlDothtmlRouteImport } from './routes/shower-doors-bartlett-il[.]html'
 import { Route as ShowerDoorsBannockburnIlDothtmlRouteImport } from './routes/shower-doors-bannockburn-il[.]html'
 import { Route as ShowerDoorsArlingtonHeightsIlDothtmlRouteImport } from './routes/shower-doors-arlington-heights-il[.]html'
+import { Route as ShowerDoorBuyersGuideDothtmlRouteImport } from './routes/shower-door-buyers-guide[.]html'
 import { Route as ReplacementGlassDothtmlRouteImport } from './routes/replacement-glass[.]html'
+import { Route as ReplacementGlassGuideDothtmlRouteImport } from './routes/replacement-glass-guide[.]html'
 import { Route as OtherCustomGlassDothtmlRouteImport } from './routes/other-custom-glass[.]html'
+import { Route as OtherCustomGlassGuideDothtmlRouteImport } from './routes/other-custom-glass-guide[.]html'
 import { Route as OfficePartitionsDothtmlRouteImport } from './routes/office-partitions[.]html'
+import { Route as OfficePartitionsGuideDothtmlRouteImport } from './routes/office-partitions-guide[.]html'
 import { Route as MirrorsDothtmlRouteImport } from './routes/mirrors[.]html'
+import { Route as MirrorsBuyersGuideDothtmlRouteImport } from './routes/mirrors-buyers-guide[.]html'
 import { Route as IndexDothtmlRouteImport } from './routes/index[.]html'
 import { Route as GlassRailingsDothtmlRouteImport } from './routes/glass-railings[.]html'
+import { Route as GlassRailingsBuyersGuideDothtmlRouteImport } from './routes/glass-railings-buyers-guide[.]html'
 import { Route as FramelessVsSemiFramelessShowerDoorsDothtmlRouteImport } from './routes/frameless-vs-semi-frameless-shower-doors[.]html'
 import { Route as CustomShowerGlassDothtmlRouteImport } from './routes/custom-shower-glass[.]html'
+import { Route as CustomShowerGlassGuideDothtmlRouteImport } from './routes/custom-shower-glass-guide[.]html'
 import { Route as BathroomRemodelGlassDothtmlRouteImport } from './routes/bathroom-remodel-glass[.]html'
+import { Route as BathroomRemodelGlassGuideDothtmlRouteImport } from './routes/bathroom-remodel-glass-guide[.]html'
 import { Route as IndexRouteImport } from './routes/index'
 
 const WineCigarRoomsDothtmlRoute = WineCigarRoomsDothtmlRouteImport.update({
@@ -59,16 +70,34 @@ const WineCigarRoomsDothtmlRoute = WineCigarRoomsDothtmlRouteImport.update({
   path: '/wine-cigar-rooms.html',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WineCigarRoomGlassGuideDothtmlRoute =
+  WineCigarRoomGlassGuideDothtmlRouteImport.update({
+    id: '/wine-cigar-room-glass-guide.html',
+    path: '/wine-cigar-room-glass-guide.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const TubDoorsDothtmlRoute = TubDoorsDothtmlRouteImport.update({
   id: '/tub-doors.html',
   path: '/tub-doors.html',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TubDoorBuyersGuideDothtmlRoute =
+  TubDoorBuyersGuideDothtmlRouteImport.update({
+    id: '/tub-door-buyers-guide.html',
+    path: '/tub-door-buyers-guide.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ShowerEnclosuresDothtmlRoute = ShowerEnclosuresDothtmlRouteImport.update({
   id: '/shower-enclosures.html',
   path: '/shower-enclosures.html',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShowerEnclosureBuyersGuideDothtmlRoute =
+  ShowerEnclosureBuyersGuideDothtmlRouteImport.update({
+    id: '/shower-enclosure-buyers-guide.html',
+    path: '/shower-enclosure-buyers-guide.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ShowerDoorsDothtmlRoute = ShowerDoorsDothtmlRouteImport.update({
   id: '/shower-doors.html',
   path: '/shower-doors.html',
@@ -254,26 +283,56 @@ const ShowerDoorsArlingtonHeightsIlDothtmlRoute =
     path: '/shower-doors-arlington-heights-il.html',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ShowerDoorBuyersGuideDothtmlRoute =
+  ShowerDoorBuyersGuideDothtmlRouteImport.update({
+    id: '/shower-door-buyers-guide.html',
+    path: '/shower-door-buyers-guide.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ReplacementGlassDothtmlRoute = ReplacementGlassDothtmlRouteImport.update({
   id: '/replacement-glass.html',
   path: '/replacement-glass.html',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReplacementGlassGuideDothtmlRoute =
+  ReplacementGlassGuideDothtmlRouteImport.update({
+    id: '/replacement-glass-guide.html',
+    path: '/replacement-glass-guide.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const OtherCustomGlassDothtmlRoute = OtherCustomGlassDothtmlRouteImport.update({
   id: '/other-custom-glass.html',
   path: '/other-custom-glass.html',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OtherCustomGlassGuideDothtmlRoute =
+  OtherCustomGlassGuideDothtmlRouteImport.update({
+    id: '/other-custom-glass-guide.html',
+    path: '/other-custom-glass-guide.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const OfficePartitionsDothtmlRoute = OfficePartitionsDothtmlRouteImport.update({
   id: '/office-partitions.html',
   path: '/office-partitions.html',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OfficePartitionsGuideDothtmlRoute =
+  OfficePartitionsGuideDothtmlRouteImport.update({
+    id: '/office-partitions-guide.html',
+    path: '/office-partitions-guide.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const MirrorsDothtmlRoute = MirrorsDothtmlRouteImport.update({
   id: '/mirrors.html',
   path: '/mirrors.html',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MirrorsBuyersGuideDothtmlRoute =
+  MirrorsBuyersGuideDothtmlRouteImport.update({
+    id: '/mirrors-buyers-guide.html',
+    path: '/mirrors-buyers-guide.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const IndexDothtmlRoute = IndexDothtmlRouteImport.update({
   id: '/index.html',
   path: '/index.html',
@@ -284,6 +343,12 @@ const GlassRailingsDothtmlRoute = GlassRailingsDothtmlRouteImport.update({
   path: '/glass-railings.html',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GlassRailingsBuyersGuideDothtmlRoute =
+  GlassRailingsBuyersGuideDothtmlRouteImport.update({
+    id: '/glass-railings-buyers-guide.html',
+    path: '/glass-railings-buyers-guide.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const FramelessVsSemiFramelessShowerDoorsDothtmlRoute =
   FramelessVsSemiFramelessShowerDoorsDothtmlRouteImport.update({
     id: '/frameless-vs-semi-frameless-shower-doors.html',
@@ -296,10 +361,22 @@ const CustomShowerGlassDothtmlRoute =
     path: '/custom-shower-glass.html',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CustomShowerGlassGuideDothtmlRoute =
+  CustomShowerGlassGuideDothtmlRouteImport.update({
+    id: '/custom-shower-glass-guide.html',
+    path: '/custom-shower-glass-guide.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BathroomRemodelGlassDothtmlRoute =
   BathroomRemodelGlassDothtmlRouteImport.update({
     id: '/bathroom-remodel-glass.html',
     path: '/bathroom-remodel-glass.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BathroomRemodelGlassGuideDothtmlRoute =
+  BathroomRemodelGlassGuideDothtmlRouteImport.update({
+    id: '/bathroom-remodel-glass-guide.html',
+    path: '/bathroom-remodel-glass-guide.html',
     getParentRoute: () => rootRouteImport,
   } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -310,15 +387,23 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bathroom-remodel-glass-guide.html': typeof BathroomRemodelGlassGuideDothtmlRoute
   '/bathroom-remodel-glass.html': typeof BathroomRemodelGlassDothtmlRoute
+  '/custom-shower-glass-guide.html': typeof CustomShowerGlassGuideDothtmlRoute
   '/custom-shower-glass.html': typeof CustomShowerGlassDothtmlRoute
   '/frameless-vs-semi-frameless-shower-doors.html': typeof FramelessVsSemiFramelessShowerDoorsDothtmlRoute
+  '/glass-railings-buyers-guide.html': typeof GlassRailingsBuyersGuideDothtmlRoute
   '/glass-railings.html': typeof GlassRailingsDothtmlRoute
   '/index.html': typeof IndexDothtmlRoute
+  '/mirrors-buyers-guide.html': typeof MirrorsBuyersGuideDothtmlRoute
   '/mirrors.html': typeof MirrorsDothtmlRoute
+  '/office-partitions-guide.html': typeof OfficePartitionsGuideDothtmlRoute
   '/office-partitions.html': typeof OfficePartitionsDothtmlRoute
+  '/other-custom-glass-guide.html': typeof OtherCustomGlassGuideDothtmlRoute
   '/other-custom-glass.html': typeof OtherCustomGlassDothtmlRoute
+  '/replacement-glass-guide.html': typeof ReplacementGlassGuideDothtmlRoute
   '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
+  '/shower-door-buyers-guide.html': typeof ShowerDoorBuyersGuideDothtmlRoute
   '/shower-doors-arlington-heights-il.html': typeof ShowerDoorsArlingtonHeightsIlDothtmlRoute
   '/shower-doors-bannockburn-il.html': typeof ShowerDoorsBannockburnIlDothtmlRoute
   '/shower-doors-bartlett-il.html': typeof ShowerDoorsBartlettIlDothtmlRoute
@@ -350,21 +435,32 @@ export interface FileRoutesByFullPath {
   '/shower-doors-wilmette-il.html': typeof ShowerDoorsWilmetteIlDothtmlRoute
   '/shower-doors-winnetka-il.html': typeof ShowerDoorsWinnetkaIlDothtmlRoute
   '/shower-doors.html': typeof ShowerDoorsDothtmlRoute
+  '/shower-enclosure-buyers-guide.html': typeof ShowerEnclosureBuyersGuideDothtmlRoute
   '/shower-enclosures.html': typeof ShowerEnclosuresDothtmlRoute
+  '/tub-door-buyers-guide.html': typeof TubDoorBuyersGuideDothtmlRoute
   '/tub-doors.html': typeof TubDoorsDothtmlRoute
+  '/wine-cigar-room-glass-guide.html': typeof WineCigarRoomGlassGuideDothtmlRoute
   '/wine-cigar-rooms.html': typeof WineCigarRoomsDothtmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bathroom-remodel-glass-guide.html': typeof BathroomRemodelGlassGuideDothtmlRoute
   '/bathroom-remodel-glass.html': typeof BathroomRemodelGlassDothtmlRoute
+  '/custom-shower-glass-guide.html': typeof CustomShowerGlassGuideDothtmlRoute
   '/custom-shower-glass.html': typeof CustomShowerGlassDothtmlRoute
   '/frameless-vs-semi-frameless-shower-doors.html': typeof FramelessVsSemiFramelessShowerDoorsDothtmlRoute
+  '/glass-railings-buyers-guide.html': typeof GlassRailingsBuyersGuideDothtmlRoute
   '/glass-railings.html': typeof GlassRailingsDothtmlRoute
   '/index.html': typeof IndexDothtmlRoute
+  '/mirrors-buyers-guide.html': typeof MirrorsBuyersGuideDothtmlRoute
   '/mirrors.html': typeof MirrorsDothtmlRoute
+  '/office-partitions-guide.html': typeof OfficePartitionsGuideDothtmlRoute
   '/office-partitions.html': typeof OfficePartitionsDothtmlRoute
+  '/other-custom-glass-guide.html': typeof OtherCustomGlassGuideDothtmlRoute
   '/other-custom-glass.html': typeof OtherCustomGlassDothtmlRoute
+  '/replacement-glass-guide.html': typeof ReplacementGlassGuideDothtmlRoute
   '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
+  '/shower-door-buyers-guide.html': typeof ShowerDoorBuyersGuideDothtmlRoute
   '/shower-doors-arlington-heights-il.html': typeof ShowerDoorsArlingtonHeightsIlDothtmlRoute
   '/shower-doors-bannockburn-il.html': typeof ShowerDoorsBannockburnIlDothtmlRoute
   '/shower-doors-bartlett-il.html': typeof ShowerDoorsBartlettIlDothtmlRoute
@@ -396,22 +492,33 @@ export interface FileRoutesByTo {
   '/shower-doors-wilmette-il.html': typeof ShowerDoorsWilmetteIlDothtmlRoute
   '/shower-doors-winnetka-il.html': typeof ShowerDoorsWinnetkaIlDothtmlRoute
   '/shower-doors.html': typeof ShowerDoorsDothtmlRoute
+  '/shower-enclosure-buyers-guide.html': typeof ShowerEnclosureBuyersGuideDothtmlRoute
   '/shower-enclosures.html': typeof ShowerEnclosuresDothtmlRoute
+  '/tub-door-buyers-guide.html': typeof TubDoorBuyersGuideDothtmlRoute
   '/tub-doors.html': typeof TubDoorsDothtmlRoute
+  '/wine-cigar-room-glass-guide.html': typeof WineCigarRoomGlassGuideDothtmlRoute
   '/wine-cigar-rooms.html': typeof WineCigarRoomsDothtmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bathroom-remodel-glass-guide.html': typeof BathroomRemodelGlassGuideDothtmlRoute
   '/bathroom-remodel-glass.html': typeof BathroomRemodelGlassDothtmlRoute
+  '/custom-shower-glass-guide.html': typeof CustomShowerGlassGuideDothtmlRoute
   '/custom-shower-glass.html': typeof CustomShowerGlassDothtmlRoute
   '/frameless-vs-semi-frameless-shower-doors.html': typeof FramelessVsSemiFramelessShowerDoorsDothtmlRoute
+  '/glass-railings-buyers-guide.html': typeof GlassRailingsBuyersGuideDothtmlRoute
   '/glass-railings.html': typeof GlassRailingsDothtmlRoute
   '/index.html': typeof IndexDothtmlRoute
+  '/mirrors-buyers-guide.html': typeof MirrorsBuyersGuideDothtmlRoute
   '/mirrors.html': typeof MirrorsDothtmlRoute
+  '/office-partitions-guide.html': typeof OfficePartitionsGuideDothtmlRoute
   '/office-partitions.html': typeof OfficePartitionsDothtmlRoute
+  '/other-custom-glass-guide.html': typeof OtherCustomGlassGuideDothtmlRoute
   '/other-custom-glass.html': typeof OtherCustomGlassDothtmlRoute
+  '/replacement-glass-guide.html': typeof ReplacementGlassGuideDothtmlRoute
   '/replacement-glass.html': typeof ReplacementGlassDothtmlRoute
+  '/shower-door-buyers-guide.html': typeof ShowerDoorBuyersGuideDothtmlRoute
   '/shower-doors-arlington-heights-il.html': typeof ShowerDoorsArlingtonHeightsIlDothtmlRoute
   '/shower-doors-bannockburn-il.html': typeof ShowerDoorsBannockburnIlDothtmlRoute
   '/shower-doors-bartlett-il.html': typeof ShowerDoorsBartlettIlDothtmlRoute
@@ -443,23 +550,34 @@ export interface FileRoutesById {
   '/shower-doors-wilmette-il.html': typeof ShowerDoorsWilmetteIlDothtmlRoute
   '/shower-doors-winnetka-il.html': typeof ShowerDoorsWinnetkaIlDothtmlRoute
   '/shower-doors.html': typeof ShowerDoorsDothtmlRoute
+  '/shower-enclosure-buyers-guide.html': typeof ShowerEnclosureBuyersGuideDothtmlRoute
   '/shower-enclosures.html': typeof ShowerEnclosuresDothtmlRoute
+  '/tub-door-buyers-guide.html': typeof TubDoorBuyersGuideDothtmlRoute
   '/tub-doors.html': typeof TubDoorsDothtmlRoute
+  '/wine-cigar-room-glass-guide.html': typeof WineCigarRoomGlassGuideDothtmlRoute
   '/wine-cigar-rooms.html': typeof WineCigarRoomsDothtmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/bathroom-remodel-glass-guide.html'
     | '/bathroom-remodel-glass.html'
+    | '/custom-shower-glass-guide.html'
     | '/custom-shower-glass.html'
     | '/frameless-vs-semi-frameless-shower-doors.html'
+    | '/glass-railings-buyers-guide.html'
     | '/glass-railings.html'
     | '/index.html'
+    | '/mirrors-buyers-guide.html'
     | '/mirrors.html'
+    | '/office-partitions-guide.html'
     | '/office-partitions.html'
+    | '/other-custom-glass-guide.html'
     | '/other-custom-glass.html'
+    | '/replacement-glass-guide.html'
     | '/replacement-glass.html'
+    | '/shower-door-buyers-guide.html'
     | '/shower-doors-arlington-heights-il.html'
     | '/shower-doors-bannockburn-il.html'
     | '/shower-doors-bartlett-il.html'
@@ -491,21 +609,32 @@ export interface FileRouteTypes {
     | '/shower-doors-wilmette-il.html'
     | '/shower-doors-winnetka-il.html'
     | '/shower-doors.html'
+    | '/shower-enclosure-buyers-guide.html'
     | '/shower-enclosures.html'
+    | '/tub-door-buyers-guide.html'
     | '/tub-doors.html'
+    | '/wine-cigar-room-glass-guide.html'
     | '/wine-cigar-rooms.html'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/bathroom-remodel-glass-guide.html'
     | '/bathroom-remodel-glass.html'
+    | '/custom-shower-glass-guide.html'
     | '/custom-shower-glass.html'
     | '/frameless-vs-semi-frameless-shower-doors.html'
+    | '/glass-railings-buyers-guide.html'
     | '/glass-railings.html'
     | '/index.html'
+    | '/mirrors-buyers-guide.html'
     | '/mirrors.html'
+    | '/office-partitions-guide.html'
     | '/office-partitions.html'
+    | '/other-custom-glass-guide.html'
     | '/other-custom-glass.html'
+    | '/replacement-glass-guide.html'
     | '/replacement-glass.html'
+    | '/shower-door-buyers-guide.html'
     | '/shower-doors-arlington-heights-il.html'
     | '/shower-doors-bannockburn-il.html'
     | '/shower-doors-bartlett-il.html'
@@ -537,21 +666,32 @@ export interface FileRouteTypes {
     | '/shower-doors-wilmette-il.html'
     | '/shower-doors-winnetka-il.html'
     | '/shower-doors.html'
+    | '/shower-enclosure-buyers-guide.html'
     | '/shower-enclosures.html'
+    | '/tub-door-buyers-guide.html'
     | '/tub-doors.html'
+    | '/wine-cigar-room-glass-guide.html'
     | '/wine-cigar-rooms.html'
   id:
     | '__root__'
     | '/'
+    | '/bathroom-remodel-glass-guide.html'
     | '/bathroom-remodel-glass.html'
+    | '/custom-shower-glass-guide.html'
     | '/custom-shower-glass.html'
     | '/frameless-vs-semi-frameless-shower-doors.html'
+    | '/glass-railings-buyers-guide.html'
     | '/glass-railings.html'
     | '/index.html'
+    | '/mirrors-buyers-guide.html'
     | '/mirrors.html'
+    | '/office-partitions-guide.html'
     | '/office-partitions.html'
+    | '/other-custom-glass-guide.html'
     | '/other-custom-glass.html'
+    | '/replacement-glass-guide.html'
     | '/replacement-glass.html'
+    | '/shower-door-buyers-guide.html'
     | '/shower-doors-arlington-heights-il.html'
     | '/shower-doors-bannockburn-il.html'
     | '/shower-doors-bartlett-il.html'
@@ -583,22 +723,33 @@ export interface FileRouteTypes {
     | '/shower-doors-wilmette-il.html'
     | '/shower-doors-winnetka-il.html'
     | '/shower-doors.html'
+    | '/shower-enclosure-buyers-guide.html'
     | '/shower-enclosures.html'
+    | '/tub-door-buyers-guide.html'
     | '/tub-doors.html'
+    | '/wine-cigar-room-glass-guide.html'
     | '/wine-cigar-rooms.html'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BathroomRemodelGlassGuideDothtmlRoute: typeof BathroomRemodelGlassGuideDothtmlRoute
   BathroomRemodelGlassDothtmlRoute: typeof BathroomRemodelGlassDothtmlRoute
+  CustomShowerGlassGuideDothtmlRoute: typeof CustomShowerGlassGuideDothtmlRoute
   CustomShowerGlassDothtmlRoute: typeof CustomShowerGlassDothtmlRoute
   FramelessVsSemiFramelessShowerDoorsDothtmlRoute: typeof FramelessVsSemiFramelessShowerDoorsDothtmlRoute
+  GlassRailingsBuyersGuideDothtmlRoute: typeof GlassRailingsBuyersGuideDothtmlRoute
   GlassRailingsDothtmlRoute: typeof GlassRailingsDothtmlRoute
   IndexDothtmlRoute: typeof IndexDothtmlRoute
+  MirrorsBuyersGuideDothtmlRoute: typeof MirrorsBuyersGuideDothtmlRoute
   MirrorsDothtmlRoute: typeof MirrorsDothtmlRoute
+  OfficePartitionsGuideDothtmlRoute: typeof OfficePartitionsGuideDothtmlRoute
   OfficePartitionsDothtmlRoute: typeof OfficePartitionsDothtmlRoute
+  OtherCustomGlassGuideDothtmlRoute: typeof OtherCustomGlassGuideDothtmlRoute
   OtherCustomGlassDothtmlRoute: typeof OtherCustomGlassDothtmlRoute
+  ReplacementGlassGuideDothtmlRoute: typeof ReplacementGlassGuideDothtmlRoute
   ReplacementGlassDothtmlRoute: typeof ReplacementGlassDothtmlRoute
+  ShowerDoorBuyersGuideDothtmlRoute: typeof ShowerDoorBuyersGuideDothtmlRoute
   ShowerDoorsArlingtonHeightsIlDothtmlRoute: typeof ShowerDoorsArlingtonHeightsIlDothtmlRoute
   ShowerDoorsBannockburnIlDothtmlRoute: typeof ShowerDoorsBannockburnIlDothtmlRoute
   ShowerDoorsBartlettIlDothtmlRoute: typeof ShowerDoorsBartlettIlDothtmlRoute
@@ -630,8 +781,11 @@ export interface RootRouteChildren {
   ShowerDoorsWilmetteIlDothtmlRoute: typeof ShowerDoorsWilmetteIlDothtmlRoute
   ShowerDoorsWinnetkaIlDothtmlRoute: typeof ShowerDoorsWinnetkaIlDothtmlRoute
   ShowerDoorsDothtmlRoute: typeof ShowerDoorsDothtmlRoute
+  ShowerEnclosureBuyersGuideDothtmlRoute: typeof ShowerEnclosureBuyersGuideDothtmlRoute
   ShowerEnclosuresDothtmlRoute: typeof ShowerEnclosuresDothtmlRoute
+  TubDoorBuyersGuideDothtmlRoute: typeof TubDoorBuyersGuideDothtmlRoute
   TubDoorsDothtmlRoute: typeof TubDoorsDothtmlRoute
+  WineCigarRoomGlassGuideDothtmlRoute: typeof WineCigarRoomGlassGuideDothtmlRoute
   WineCigarRoomsDothtmlRoute: typeof WineCigarRoomsDothtmlRoute
 }
 
@@ -644,6 +798,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WineCigarRoomsDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/wine-cigar-room-glass-guide.html': {
+      id: '/wine-cigar-room-glass-guide.html'
+      path: '/wine-cigar-room-glass-guide.html'
+      fullPath: '/wine-cigar-room-glass-guide.html'
+      preLoaderRoute: typeof WineCigarRoomGlassGuideDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tub-doors.html': {
       id: '/tub-doors.html'
       path: '/tub-doors.html'
@@ -651,11 +812,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TubDoorsDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tub-door-buyers-guide.html': {
+      id: '/tub-door-buyers-guide.html'
+      path: '/tub-door-buyers-guide.html'
+      fullPath: '/tub-door-buyers-guide.html'
+      preLoaderRoute: typeof TubDoorBuyersGuideDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/shower-enclosures.html': {
       id: '/shower-enclosures.html'
       path: '/shower-enclosures.html'
       fullPath: '/shower-enclosures.html'
       preLoaderRoute: typeof ShowerEnclosuresDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shower-enclosure-buyers-guide.html': {
+      id: '/shower-enclosure-buyers-guide.html'
+      path: '/shower-enclosure-buyers-guide.html'
+      fullPath: '/shower-enclosure-buyers-guide.html'
+      preLoaderRoute: typeof ShowerEnclosureBuyersGuideDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/shower-doors.html': {
@@ -875,11 +1050,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShowerDoorsArlingtonHeightsIlDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/shower-door-buyers-guide.html': {
+      id: '/shower-door-buyers-guide.html'
+      path: '/shower-door-buyers-guide.html'
+      fullPath: '/shower-door-buyers-guide.html'
+      preLoaderRoute: typeof ShowerDoorBuyersGuideDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/replacement-glass.html': {
       id: '/replacement-glass.html'
       path: '/replacement-glass.html'
       fullPath: '/replacement-glass.html'
       preLoaderRoute: typeof ReplacementGlassDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/replacement-glass-guide.html': {
+      id: '/replacement-glass-guide.html'
+      path: '/replacement-glass-guide.html'
+      fullPath: '/replacement-glass-guide.html'
+      preLoaderRoute: typeof ReplacementGlassGuideDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/other-custom-glass.html': {
@@ -889,6 +1078,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OtherCustomGlassDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/other-custom-glass-guide.html': {
+      id: '/other-custom-glass-guide.html'
+      path: '/other-custom-glass-guide.html'
+      fullPath: '/other-custom-glass-guide.html'
+      preLoaderRoute: typeof OtherCustomGlassGuideDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/office-partitions.html': {
       id: '/office-partitions.html'
       path: '/office-partitions.html'
@@ -896,11 +1092,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OfficePartitionsDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/office-partitions-guide.html': {
+      id: '/office-partitions-guide.html'
+      path: '/office-partitions-guide.html'
+      fullPath: '/office-partitions-guide.html'
+      preLoaderRoute: typeof OfficePartitionsGuideDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/mirrors.html': {
       id: '/mirrors.html'
       path: '/mirrors.html'
       fullPath: '/mirrors.html'
       preLoaderRoute: typeof MirrorsDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mirrors-buyers-guide.html': {
+      id: '/mirrors-buyers-guide.html'
+      path: '/mirrors-buyers-guide.html'
+      fullPath: '/mirrors-buyers-guide.html'
+      preLoaderRoute: typeof MirrorsBuyersGuideDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/index.html': {
@@ -917,6 +1127,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GlassRailingsDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/glass-railings-buyers-guide.html': {
+      id: '/glass-railings-buyers-guide.html'
+      path: '/glass-railings-buyers-guide.html'
+      fullPath: '/glass-railings-buyers-guide.html'
+      preLoaderRoute: typeof GlassRailingsBuyersGuideDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/frameless-vs-semi-frameless-shower-doors.html': {
       id: '/frameless-vs-semi-frameless-shower-doors.html'
       path: '/frameless-vs-semi-frameless-shower-doors.html'
@@ -931,11 +1148,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CustomShowerGlassDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/custom-shower-glass-guide.html': {
+      id: '/custom-shower-glass-guide.html'
+      path: '/custom-shower-glass-guide.html'
+      fullPath: '/custom-shower-glass-guide.html'
+      preLoaderRoute: typeof CustomShowerGlassGuideDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/bathroom-remodel-glass.html': {
       id: '/bathroom-remodel-glass.html'
       path: '/bathroom-remodel-glass.html'
       fullPath: '/bathroom-remodel-glass.html'
       preLoaderRoute: typeof BathroomRemodelGlassDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bathroom-remodel-glass-guide.html': {
+      id: '/bathroom-remodel-glass-guide.html'
+      path: '/bathroom-remodel-glass-guide.html'
+      fullPath: '/bathroom-remodel-glass-guide.html'
+      preLoaderRoute: typeof BathroomRemodelGlassGuideDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -950,16 +1181,24 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BathroomRemodelGlassGuideDothtmlRoute: BathroomRemodelGlassGuideDothtmlRoute,
   BathroomRemodelGlassDothtmlRoute: BathroomRemodelGlassDothtmlRoute,
+  CustomShowerGlassGuideDothtmlRoute: CustomShowerGlassGuideDothtmlRoute,
   CustomShowerGlassDothtmlRoute: CustomShowerGlassDothtmlRoute,
   FramelessVsSemiFramelessShowerDoorsDothtmlRoute:
     FramelessVsSemiFramelessShowerDoorsDothtmlRoute,
+  GlassRailingsBuyersGuideDothtmlRoute: GlassRailingsBuyersGuideDothtmlRoute,
   GlassRailingsDothtmlRoute: GlassRailingsDothtmlRoute,
   IndexDothtmlRoute: IndexDothtmlRoute,
+  MirrorsBuyersGuideDothtmlRoute: MirrorsBuyersGuideDothtmlRoute,
   MirrorsDothtmlRoute: MirrorsDothtmlRoute,
+  OfficePartitionsGuideDothtmlRoute: OfficePartitionsGuideDothtmlRoute,
   OfficePartitionsDothtmlRoute: OfficePartitionsDothtmlRoute,
+  OtherCustomGlassGuideDothtmlRoute: OtherCustomGlassGuideDothtmlRoute,
   OtherCustomGlassDothtmlRoute: OtherCustomGlassDothtmlRoute,
+  ReplacementGlassGuideDothtmlRoute: ReplacementGlassGuideDothtmlRoute,
   ReplacementGlassDothtmlRoute: ReplacementGlassDothtmlRoute,
+  ShowerDoorBuyersGuideDothtmlRoute: ShowerDoorBuyersGuideDothtmlRoute,
   ShowerDoorsArlingtonHeightsIlDothtmlRoute:
     ShowerDoorsArlingtonHeightsIlDothtmlRoute,
   ShowerDoorsBannockburnIlDothtmlRoute: ShowerDoorsBannockburnIlDothtmlRoute,
@@ -996,8 +1235,12 @@ const rootRouteChildren: RootRouteChildren = {
   ShowerDoorsWilmetteIlDothtmlRoute: ShowerDoorsWilmetteIlDothtmlRoute,
   ShowerDoorsWinnetkaIlDothtmlRoute: ShowerDoorsWinnetkaIlDothtmlRoute,
   ShowerDoorsDothtmlRoute: ShowerDoorsDothtmlRoute,
+  ShowerEnclosureBuyersGuideDothtmlRoute:
+    ShowerEnclosureBuyersGuideDothtmlRoute,
   ShowerEnclosuresDothtmlRoute: ShowerEnclosuresDothtmlRoute,
+  TubDoorBuyersGuideDothtmlRoute: TubDoorBuyersGuideDothtmlRoute,
   TubDoorsDothtmlRoute: TubDoorsDothtmlRoute,
+  WineCigarRoomGlassGuideDothtmlRoute: WineCigarRoomGlassGuideDothtmlRoute,
   WineCigarRoomsDothtmlRoute: WineCigarRoomsDothtmlRoute,
 }
 export const routeTree = rootRouteImport
