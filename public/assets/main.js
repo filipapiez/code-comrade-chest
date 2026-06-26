@@ -372,7 +372,7 @@ document.querySelectorAll('.step').forEach(el=>stepIo.observe(el));
 const form=document.getElementById('estimateForm');
 const success=document.getElementById('formSuccess');
 function setErr(id,bad){document.getElementById(id).classList.toggle('invalid',bad);return !bad;}
-form.addEventListener('submit',e=>{
+form.addEventListener('submit',async e=>{
   e.preventDefault();
   const name=form.name.value.trim();
   const phone=form.phone.value.replace(/[^\d]/g,'');
@@ -385,16 +385,26 @@ form.addEventListener('submit',e=>{
   ok&=setErr('f-email',!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));
   ok&=setErr('f-project',!project);
   ok&=setErr('f-message',message.length<5);
-  if(ok){
-    const subject=`New Estimate Request — ${project} — ${name}`;
-    const body=`Name: ${name}\nPhone: ${form.phone.value.trim()}\nEmail: ${email}\nProject: ${project}\n\nMessage:\n${message}\n`;
-    const mailto=`mailto:makibaki@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href=mailto;
+  if(!ok){
+    form.querySelector('.field.invalid input,.field.invalid select,.field.invalid textarea')?.focus();
+    return;
+  }
+  const btn=form.querySelector('button[type="submit"]');
+  const original=btn?btn.innerHTML:'';
+  if(btn){btn.disabled=true;btn.innerHTML='Sending…';}
+  try{
+    const res=await fetch('/api/public/contact',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({name,phone:form.phone.value.trim(),email,project,message})
+    });
+    if(!res.ok)throw new Error('send_failed');
     form.style.display='none';
     success.classList.add('show');
     success.scrollIntoView({behavior:'smooth',block:'center'});
-  }else{
-    form.querySelector('.field.invalid input,.field.invalid select,.field.invalid textarea')?.focus();
+  }catch(err){
+    if(btn){btn.disabled=false;btn.innerHTML=original;}
+    alert('Sorry — we couldn\'t send your request. Please call 224-427-9199.');
   }
 });
 // clear error on input
