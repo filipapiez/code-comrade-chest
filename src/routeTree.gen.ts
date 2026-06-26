@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WineCigarRoomsDothtmlRouteImport } from './routes/wine-cigar-rooms[.]html'
 import { Route as WineCigarRoomGlassGuideDothtmlRouteImport } from './routes/wine-cigar-room-glass-guide[.]html'
+import { Route as UnsubscribeRouteImport } from './routes/unsubscribe'
 import { Route as TubDoorsDothtmlRouteImport } from './routes/tub-doors[.]html'
 import { Route as TubDoorBuyersGuideDothtmlRouteImport } from './routes/tub-door-buyers-guide[.]html'
 import { Route as ShowerEnclosuresDothtmlRouteImport } from './routes/shower-enclosures[.]html'
@@ -83,6 +84,11 @@ const WineCigarRoomGlassGuideDothtmlRoute =
     path: '/wine-cigar-room-glass-guide.html',
     getParentRoute: () => rootRouteImport,
   } as any)
+const UnsubscribeRoute = UnsubscribeRouteImport.update({
+  id: '/unsubscribe',
+  path: '/unsubscribe',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TubDoorsDothtmlRoute = TubDoorsDothtmlRouteImport.update({
   id: '/tub-doors.html',
   path: '/tub-doors.html',
@@ -485,6 +491,7 @@ export interface FileRoutesByFullPath {
   '/shower-enclosures.html': typeof ShowerEnclosuresDothtmlRoute
   '/tub-door-buyers-guide.html': typeof TubDoorBuyersGuideDothtmlRoute
   '/tub-doors.html': typeof TubDoorsDothtmlRoute
+  '/unsubscribe': typeof UnsubscribeRoute
   '/wine-cigar-room-glass-guide.html': typeof WineCigarRoomGlassGuideDothtmlRoute
   '/wine-cigar-rooms.html': typeof WineCigarRoomsDothtmlRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
@@ -549,6 +556,7 @@ export interface FileRoutesByTo {
   '/shower-enclosures.html': typeof ShowerEnclosuresDothtmlRoute
   '/tub-door-buyers-guide.html': typeof TubDoorBuyersGuideDothtmlRoute
   '/tub-doors.html': typeof TubDoorsDothtmlRoute
+  '/unsubscribe': typeof UnsubscribeRoute
   '/wine-cigar-room-glass-guide.html': typeof WineCigarRoomGlassGuideDothtmlRoute
   '/wine-cigar-rooms.html': typeof WineCigarRoomsDothtmlRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
@@ -614,6 +622,7 @@ export interface FileRoutesById {
   '/shower-enclosures.html': typeof ShowerEnclosuresDothtmlRoute
   '/tub-door-buyers-guide.html': typeof TubDoorBuyersGuideDothtmlRoute
   '/tub-doors.html': typeof TubDoorsDothtmlRoute
+  '/unsubscribe': typeof UnsubscribeRoute
   '/wine-cigar-room-glass-guide.html': typeof WineCigarRoomGlassGuideDothtmlRoute
   '/wine-cigar-rooms.html': typeof WineCigarRoomsDothtmlRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
@@ -680,6 +689,7 @@ export interface FileRouteTypes {
     | '/shower-enclosures.html'
     | '/tub-door-buyers-guide.html'
     | '/tub-doors.html'
+    | '/unsubscribe'
     | '/wine-cigar-room-glass-guide.html'
     | '/wine-cigar-rooms.html'
     | '/email/unsubscribe'
@@ -744,6 +754,7 @@ export interface FileRouteTypes {
     | '/shower-enclosures.html'
     | '/tub-door-buyers-guide.html'
     | '/tub-doors.html'
+    | '/unsubscribe'
     | '/wine-cigar-room-glass-guide.html'
     | '/wine-cigar-rooms.html'
     | '/email/unsubscribe'
@@ -808,6 +819,7 @@ export interface FileRouteTypes {
     | '/shower-enclosures.html'
     | '/tub-door-buyers-guide.html'
     | '/tub-doors.html'
+    | '/unsubscribe'
     | '/wine-cigar-room-glass-guide.html'
     | '/wine-cigar-rooms.html'
     | '/email/unsubscribe'
@@ -873,6 +885,7 @@ export interface RootRouteChildren {
   ShowerEnclosuresDothtmlRoute: typeof ShowerEnclosuresDothtmlRoute
   TubDoorBuyersGuideDothtmlRoute: typeof TubDoorBuyersGuideDothtmlRoute
   TubDoorsDothtmlRoute: typeof TubDoorsDothtmlRoute
+  UnsubscribeRoute: typeof UnsubscribeRoute
   WineCigarRoomGlassGuideDothtmlRoute: typeof WineCigarRoomGlassGuideDothtmlRoute
   WineCigarRoomsDothtmlRoute: typeof WineCigarRoomsDothtmlRoute
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
@@ -897,6 +910,13 @@ declare module '@tanstack/react-router' {
       path: '/wine-cigar-room-glass-guide.html'
       fullPath: '/wine-cigar-room-glass-guide.html'
       preLoaderRoute: typeof WineCigarRoomGlassGuideDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/unsubscribe': {
+      id: '/unsubscribe'
+      path: '/unsubscribe'
+      fullPath: '/unsubscribe'
+      preLoaderRoute: typeof UnsubscribeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tub-doors.html': {
@@ -1384,6 +1404,7 @@ const rootRouteChildren: RootRouteChildren = {
   ShowerEnclosuresDothtmlRoute: ShowerEnclosuresDothtmlRoute,
   TubDoorBuyersGuideDothtmlRoute: TubDoorBuyersGuideDothtmlRoute,
   TubDoorsDothtmlRoute: TubDoorsDothtmlRoute,
+  UnsubscribeRoute: UnsubscribeRoute,
   WineCigarRoomGlassGuideDothtmlRoute: WineCigarRoomGlassGuideDothtmlRoute,
   WineCigarRoomsDothtmlRoute: WineCigarRoomsDothtmlRoute,
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
