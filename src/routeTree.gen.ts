@@ -67,6 +67,7 @@ import { Route as BathroomRemodelGlassGuideDothtmlRouteImport } from './routes/b
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
+import { Route as ApiPublicContactRouteImport } from './routes/api/public/contact'
 import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
@@ -405,6 +406,11 @@ const LovableEmailSuppressionRoute = LovableEmailSuppressionRouteImport.update({
   path: '/lovable/email/suppression',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicContactRoute = ApiPublicContactRouteImport.update({
+  id: '/api/public/contact',
+  path: '/api/public/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LovableEmailTransactionalSendRoute =
   LovableEmailTransactionalSendRouteImport.update({
     id: '/lovable/email/transactional/send',
@@ -482,6 +488,7 @@ export interface FileRoutesByFullPath {
   '/wine-cigar-room-glass-guide.html': typeof WineCigarRoomGlassGuideDothtmlRoute
   '/wine-cigar-rooms.html': typeof WineCigarRoomsDothtmlRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
+  '/api/public/contact': typeof ApiPublicContactRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -545,6 +552,7 @@ export interface FileRoutesByTo {
   '/wine-cigar-room-glass-guide.html': typeof WineCigarRoomGlassGuideDothtmlRoute
   '/wine-cigar-rooms.html': typeof WineCigarRoomsDothtmlRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
+  '/api/public/contact': typeof ApiPublicContactRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -609,6 +617,7 @@ export interface FileRoutesById {
   '/wine-cigar-room-glass-guide.html': typeof WineCigarRoomGlassGuideDothtmlRoute
   '/wine-cigar-rooms.html': typeof WineCigarRoomsDothtmlRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
+  '/api/public/contact': typeof ApiPublicContactRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -674,6 +683,7 @@ export interface FileRouteTypes {
     | '/wine-cigar-room-glass-guide.html'
     | '/wine-cigar-rooms.html'
     | '/email/unsubscribe'
+    | '/api/public/contact'
     | '/lovable/email/suppression'
     | '/lovable/email/queue/process'
     | '/lovable/email/transactional/preview'
@@ -737,6 +747,7 @@ export interface FileRouteTypes {
     | '/wine-cigar-room-glass-guide.html'
     | '/wine-cigar-rooms.html'
     | '/email/unsubscribe'
+    | '/api/public/contact'
     | '/lovable/email/suppression'
     | '/lovable/email/queue/process'
     | '/lovable/email/transactional/preview'
@@ -800,6 +811,7 @@ export interface FileRouteTypes {
     | '/wine-cigar-room-glass-guide.html'
     | '/wine-cigar-rooms.html'
     | '/email/unsubscribe'
+    | '/api/public/contact'
     | '/lovable/email/suppression'
     | '/lovable/email/queue/process'
     | '/lovable/email/transactional/preview'
@@ -864,6 +876,7 @@ export interface RootRouteChildren {
   WineCigarRoomGlassGuideDothtmlRoute: typeof WineCigarRoomGlassGuideDothtmlRoute
   WineCigarRoomsDothtmlRoute: typeof WineCigarRoomsDothtmlRoute
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
+  ApiPublicContactRoute: typeof ApiPublicContactRoute
   LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
   LovableEmailQueueProcessRoute: typeof LovableEmailQueueProcessRoute
   LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
@@ -1278,6 +1291,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LovableEmailSuppressionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/contact': {
+      id: '/api/public/contact'
+      path: '/api/public/contact'
+      fullPath: '/api/public/contact'
+      preLoaderRoute: typeof ApiPublicContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lovable/email/transactional/send': {
       id: '/lovable/email/transactional/send'
       path: '/lovable/email/transactional/send'
@@ -1367,6 +1387,7 @@ const rootRouteChildren: RootRouteChildren = {
   WineCigarRoomGlassGuideDothtmlRoute: WineCigarRoomGlassGuideDothtmlRoute,
   WineCigarRoomsDothtmlRoute: WineCigarRoomsDothtmlRoute,
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
+  ApiPublicContactRoute: ApiPublicContactRoute,
   LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
   LovableEmailQueueProcessRoute: LovableEmailQueueProcessRoute,
   LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
