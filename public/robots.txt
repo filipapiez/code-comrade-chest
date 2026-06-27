@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.makibakiglass.com/sitemap.xml
+Sitemap: https://makibaki.com/sitemap.xml
